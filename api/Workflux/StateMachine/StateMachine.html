@@ -129,17 +129,6 @@
                     
                 </td>
                 <td class="last">
-                    <a href="#method_getCurrentStateFor">getCurrentStateFor</a>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject)
-                    <p>
-</p>
-                </td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td class="type">
-                    
-                </td>
-                <td class="last">
                     <a href="#method_getStates">getStates</a>()
                     <p>
 </p>
@@ -162,7 +151,7 @@
                     
                 </td>
                 <td class="last">
-                    <a href="#method_getTransitions">getTransitions</a>($state_name = null, $event_name = null)
+                    <a href="#method_getTransitions">getTransitions</a>($state_name = &#039;&#039;, $event_name = &#039;&#039;)
                     <p>
 </p>
                 </td>
@@ -174,7 +163,7 @@
         <h2>Details</h2>
 
                         <h3 id="method___construct">
-        <div class="location">at line 25</div>
+        <div class="location">at line 26</div>
         <code>            public            
     <strong>__construct</strong>($name, array $states, array $transitions)</code>
     </h3>
@@ -214,7 +203,7 @@
     </div>
 
                 <h3 id="method_getName">
-        <div class="location">at line 53</div>
+        <div class="location">at line 41</div>
         <code>            public            
     <strong>getName</strong>()</code>
     </h3>
@@ -231,7 +220,7 @@
     </div>
 
                 <h3 id="method_getInitialState">
-        <div class="location">at line 58</div>
+        <div class="location">at line 46</div>
         <code>            public            
     <strong>getInitialState</strong>()</code>
     </h3>
@@ -248,7 +237,7 @@
     </div>
 
                 <h3 id="method_getFinalStates">
-        <div class="location">at line 63</div>
+        <div class="location">at line 51</div>
         <code>            public            
     <strong>getFinalStates</strong>()</code>
     </h3>
@@ -265,7 +254,7 @@
     </div>
 
                 <h3 id="method_getEventStates">
-        <div class="location">at line 68</div>
+        <div class="location">at line 56</div>
         <code>            public            
     <strong>getEventStates</strong>()</code>
     </h3>
@@ -282,7 +271,7 @@
     </div>
 
                 <h3 id="method_isEventState">
-        <div class="location">at line 73</div>
+        <div class="location">at line 61</div>
         <code>            public            
     <strong>isEventState</strong>($state_or_state_name)</code>
     </h3>
@@ -310,7 +299,7 @@
     </div>
 
                 <h3 id="method_execute">
-        <div class="location">at line 88</div>
+        <div class="location">at line 76</div>
         <code>            public            
     <strong>execute</strong>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject, $event_name)</code>
     </h3>
@@ -343,36 +332,8 @@
                     </div>
     </div>
 
-                <h3 id="method_getCurrentStateFor">
-        <div class="location">at line 125</div>
-        <code>            public            
-    <strong>getCurrentStateFor</strong>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject)</code>
-    </h3>
-    <div class="details">
-        <p>
-</p>
-        <p>
-</p>
-        <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table>
-                    <tr>
-                <td><a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a></td>
-                <td>$subject</td>
-                <td>
-</td>
-            </tr>
-            </table>
-
-            
-            
-            
-                    </div>
-    </div>
-
                 <h3 id="method_getStates">
-        <div class="location">at line 132</div>
+        <div class="location">at line 94</div>
         <code>            public            
     <strong>getStates</strong>()</code>
     </h3>
@@ -389,7 +350,7 @@
     </div>
 
                 <h3 id="method_getState">
-        <div class="location">at line 137</div>
+        <div class="location">at line 99</div>
         <code>            public            
     <strong>getState</strong>($state_name)</code>
     </h3>
@@ -417,9 +378,9 @@
     </div>
 
                 <h3 id="method_getTransitions">
-        <div class="location">at line 148</div>
+        <div class="location">at line 110</div>
         <code>            public            
-    <strong>getTransitions</strong>($state_name = null, $event_name = null)</code>
+    <strong>getTransitions</strong>($state_name = &#039;&#039;, $event_name = &#039;&#039;)</code>
     </h3>
     <div class="details">
         <p>
