@@ -27,6 +27,11 @@
     <strong>ExecutionContext</strong>        implements
         <a href="../Workflux/ExecutionContextInterface.html"><abbr title="Workflux\ExecutionContextInterface">ExecutionContextInterface</abbr></a></p>
 
+            <div class="description">
+            <p>Standard implementation of the ExecutionContextInterface.</p>
+            <p>
+</p>
+        </div>
     
     
     
@@ -38,31 +43,28 @@
                     
                 </td>
                 <td class="last">
-                    <a href="#method___construct">__construct</a>($state_machine_name, $current_state_name, array $attributes = array())
-                    <p>
-</p>
+                    <a href="#method___construct">__construct</a>(string $state_machine_name, string $current_state_name, array $attributes = array())
+                    <p>Creates a new ExecutionContext instance.</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    
+                    string
                 </td>
                 <td class="last">
                     <a href="#method_getStateMachineName">getStateMachineName</a>()
-                    <p>
-</p>
+                    <p>Returns the name of the state machine, where the execution shall start/resume.</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    
+                    string
                 </td>
                 <td class="last">
                     <a href="#method_getCurrentStateName">getCurrentStateName</a>()
-                    <p>
-</p>
+                    <p>Returns the name of the state machine state, where the execution shall resume.</p>
                 </td>
                 <td></td>
             </tr>
@@ -72,8 +74,7 @@
                 </td>
                 <td class="last">
                     <a href="#method_onStateEntry">onStateEntry</a>(<a href="../Workflux/State/StateInterface.html"><abbr title="Workflux\State\StateInterface">StateInterface</abbr></a> $state)
-                    <p>
-</p>
+                    <p>Sets the current state name.</p>
                 </td>
                 <td></td>
             </tr>
@@ -83,8 +84,7 @@
                 </td>
                 <td class="last">
                     <a href="#method_onStateExit">onStateExit</a>(<a href="../Workflux/State/StateInterface.html"><abbr title="Workflux\State\StateInterface">StateInterface</abbr></a> $state)
-                    <p>
-</p>
+                    <p>Is called when the state machine exits it's state.</p>
                 </td>
                 <td></td>
             </tr>
@@ -94,13 +94,12 @@
         <h2>Details</h2>
 
                         <h3 id="method___construct">
-        <div class="location">at line 18</div>
+        <div class="location">at line 37</div>
         <code>            public            
-    <strong>__construct</strong>($state_machine_name, $current_state_name, array $attributes = array())</code>
+    <strong>__construct</strong>(string $state_machine_name, string $current_state_name, array $attributes = array())</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Creates a new ExecutionContext instance.</p>
         <p>
 </p>
         <div class="tags">
@@ -108,13 +107,13 @@
 
                     <table>
                     <tr>
-                <td></td>
+                <td>string</td>
                 <td>$state_machine_name</td>
                 <td>
 </td>
             </tr>
                     <tr>
-                <td></td>
+                <td>string</td>
                 <td>$current_state_name</td>
                 <td>
 </td>
@@ -134,49 +133,65 @@
     </div>
 
                 <h3 id="method_getStateMachineName">
-        <div class="location">at line 25</div>
-        <code>            public            
+        <div class="location">at line 49</div>
+        <code>            public            string
     <strong>getStateMachineName</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Returns the name of the state machine, where the execution shall start/resume.</p>
         <p>
 </p>
         <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
             
             
                     </div>
     </div>
 
                 <h3 id="method_getCurrentStateName">
-        <div class="location">at line 30</div>
-        <code>            public            
+        <div class="location">at line 59</div>
+        <code>            public            string
     <strong>getCurrentStateName</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Returns the name of the state machine state, where the execution shall resume.</p>
         <p>
 </p>
         <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
             
             
                     </div>
     </div>
 
                 <h3 id="method_onStateEntry">
-        <div class="location">at line 35</div>
+        <div class="location">at line 70</div>
         <code>            public            
     <strong>onStateEntry</strong>(<a href="../Workflux/State/StateInterface.html"><abbr title="Workflux\State\StateInterface">StateInterface</abbr></a> $state)</code>
     </h3>
     <div class="details">
-        <p>
-</p>
-        <p>
-</p>
+        <p>Sets the current state name.</p>
+        <p>Is called when the state machine enters a new state</p>
         <div class="tags">
                             <h4>Parameters</h4>
 
@@ -196,13 +211,12 @@
     </div>
 
                 <h3 id="method_onStateExit">
-        <div class="location">at line 40</div>
+        <div class="location">at line 80</div>
         <code>            public            
     <strong>onStateExit</strong>(<a href="../Workflux/State/StateInterface.html"><abbr title="Workflux\State\StateInterface">StateInterface</abbr></a> $state)</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Is called when the state machine exits it's state.</p>
         <p>
 </p>
         <div class="tags">

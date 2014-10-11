@@ -26,6 +26,11 @@
                 <p>    interface
     <strong>TransitionInterface</strong></p>
 
+            <div class="description">
+            <p>TransitionInterface implementations model the connections between states.</p>
+            <p>They define the possible paths of traversal and can guard themselves from being used without permission,
+by rejecting access for undesired subjects.</p>
+        </div>
     
     
     
@@ -34,45 +39,41 @@
             <table>
                     <tr>
                 <td class="type">
-                    
+                    array
                 </td>
                 <td class="last">
                     <a href="#method_getIncomingStateNames">getIncomingStateNames</a>()
-                    <p>
-</p>
+                    <p>Returns the names of the transition's incoming states.</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    
+                    string
                 </td>
                 <td class="last">
                     <a href="#method_getOutgoingStateName">getOutgoingStateName</a>()
-                    <p>
-</p>
+                    <p>Returns the name of the transition's outgoing state.</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    
+                    <a href="../../Workflux/Guard/GuardInterface.html"><abbr title="Workflux\Guard\GuardInterface">GuardInterface</abbr></a>
                 </td>
                 <td class="last">
                     <a href="#method_getGuard">getGuard</a>()
-                    <p>
-</p>
+                    <p>Returns the transition's guard.</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    
+                    bool
                 </td>
                 <td class="last">
                     <a href="#method_hasGuard">hasGuard</a>()
-                    <p>
-</p>
+                    <p>Tells whether the transition has a guard or not.</p>
                 </td>
                 <td></td>
             </tr>
@@ -82,68 +83,104 @@
         <h2>Details</h2>
 
                         <h3 id="method_getIncomingStateNames">
-        <div class="location">at line 7</div>
-        <code>            public            
+        <div class="location">at line 19</div>
+        <code>            public            array
     <strong>getIncomingStateNames</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Returns the names of the transition's incoming states.</p>
         <p>
 </p>
         <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
             
             
                     </div>
     </div>
 
                 <h3 id="method_getOutgoingStateName">
-        <div class="location">at line 9</div>
-        <code>            public            
+        <div class="location">at line 26</div>
+        <code>            public            string
     <strong>getOutgoingStateName</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Returns the name of the transition's outgoing state.</p>
         <p>
 </p>
         <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
             
             
                     </div>
     </div>
 
                 <h3 id="method_getGuard">
-        <div class="location">at line 11</div>
-        <code>            public            
+        <div class="location">at line 33</div>
+        <code>            public            <a href="../../Workflux/Guard/GuardInterface.html"><abbr title="Workflux\Guard\GuardInterface">GuardInterface</abbr></a>
     <strong>getGuard</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Returns the transition's guard.</p>
         <p>
 </p>
         <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="../../Workflux/Guard/GuardInterface.html"><abbr title="Workflux\Guard\GuardInterface">GuardInterface</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
             
             
                     </div>
     </div>
 
                 <h3 id="method_hasGuard">
-        <div class="location">at line 13</div>
-        <code>            public            
+        <div class="location">at line 40</div>
+        <code>            public            bool
     <strong>hasGuard</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Tells whether the transition has a guard or not.</p>
         <p>
 </p>
         <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>bool</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
             
             
                     </div>

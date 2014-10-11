@@ -26,6 +26,11 @@
                 <p>    interface
     <strong>ParserInterface</strong></p>
 
+            <div class="description">
+            <p>ParserInterface implementations are supposed to parse specific payload and turn it into a common array structure, that is expected by the StateMachineBuilderInterface.</p>
+            <p>
+</p>
+        </div>
     
     
     
@@ -34,12 +39,11 @@
             <table>
                     <tr>
                 <td class="type">
-                    
+                    array
                 </td>
                 <td class="last">
-                    <a href="#method_parse">parse</a>($payload)
-                    <p>
-</p>
+                    <a href="#method_parse">parse</a>(mixed $payload)
+                    <p>Parses the given payload and returns the corresponding data as an array.</p>
                 </td>
                 <td></td>
             </tr>
@@ -49,13 +53,12 @@
         <h2>Details</h2>
 
                         <h3 id="method_parse">
-        <div class="location">at line 7</div>
-        <code>            public            
-    <strong>parse</strong>($payload)</code>
+        <div class="location">at line 18</div>
+        <code>            public            array
+    <strong>parse</strong>(mixed $payload)</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Parses the given payload and returns the corresponding data as an array.</p>
         <p>
 </p>
         <div class="tags">
@@ -63,7 +66,7 @@
 
                     <table>
                     <tr>
-                <td></td>
+                <td>mixed</td>
                 <td>$payload</td>
                 <td>
 </td>
@@ -71,6 +74,16 @@
             </table>
 
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
             
             
                     </div>

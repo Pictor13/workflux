@@ -26,6 +26,12 @@
                 <p>    class
     <strong>ExpressionGuard</strong>        extends <a href="../../Workflux/Guard/ConfigurableGuard.html"><abbr title="Workflux\Guard\ConfigurableGuard">ConfigurableGuard</abbr></a></p>
 
+            <div class="description">
+            <p>The ExpressionGuard employs it's verfification based on the evaluation of a given (symfony) expression.</p>
+            <p>The following variables are available within the configured expression:
+"subject" - The StatefulSubjectInterface that is being accepted/rejected.
+"params"  - The parameters array of the subject's execution context.</p>
+        </div>
     
     
     
@@ -38,30 +44,27 @@
                 </td>
                 <td class="last">
                     <a href="#method___construct">__construct</a>(array $options = array())
-                    <p>
-</p>
+                    <p>Creates a new ExpressionGuard instance based on with the given options.</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    
+                    boolean
                 </td>
                 <td class="last">
                     <a href="#method_accept">accept</a>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject)
-                    <p>
-</p>
+                    <p>Evaluates the configured (symfony) expression for the given subject.</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    
+                    string
                 </td>
                 <td class="last">
                     <a href="#method___toString">__toString</a>()
-                    <p>
-</p>
+                    <p>Returns a string represenation of the guard.</p>
                 </td>
                 <td></td>
             </tr>
@@ -71,13 +74,12 @@
         <h2>Details</h2>
 
                         <h3 id="method___construct">
-        <div class="location">at line 12</div>
+        <div class="location">at line 26</div>
         <code>            public            
     <strong>__construct</strong>(array $options = array())</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Creates a new ExpressionGuard instance based on with the given options.</p>
         <p>
 </p>
         <div class="tags">
@@ -99,13 +101,12 @@
     </div>
 
                 <h3 id="method_accept">
-        <div class="location">at line 19</div>
-        <code>            public            
+        <div class="location">at line 40</div>
+        <code>            public            boolean
     <strong>accept</strong>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject)</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Evaluates the configured (symfony) expression for the given subject.</p>
         <p>
 </p>
         <div class="tags">
@@ -121,23 +122,42 @@
             </table>
 
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>boolean</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
             
             
                     </div>
     </div>
 
                 <h3 id="method___toString">
-        <div class="location">at line 29</div>
-        <code>            public            
+        <div class="location">at line 55</div>
+        <code>            public            string
     <strong>__toString</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Returns a string represenation of the guard.</p>
         <p>
 </p>
         <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
             
             
                     </div>

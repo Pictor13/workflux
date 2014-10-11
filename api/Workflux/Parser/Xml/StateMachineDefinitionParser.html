@@ -27,6 +27,11 @@
     <strong>StateMachineDefinitionParser</strong>        implements
         <a href="../../../Workflux/Parser/ParserInterface.html"><abbr title="Workflux\Parser\ParserInterface">ParserInterface</abbr></a></p>
 
+            <div class="description">
+            <p>The StateMachineDefinitionParser can parse xml state machine definitions and provides an array, that is structured the way the StateMachineBuilder expects.</p>
+            <p>
+</p>
+        </div>
     
             <h2>Constants</h2>
 
@@ -62,19 +67,17 @@
                 </td>
                 <td class="last">
                     <a href="#method___construct">__construct</a>(array $options = array())
-                    <p>
-</p>
+                    <p>Creates a new StateMachineDefinitionParser instance.</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    
+                    array
                 </td>
                 <td class="last">
-                    <a href="#method_parse">parse</a>($state_machine_xml_file)
-                    <p>
-</p>
+                    <a href="#method_parse">parse</a>(string $state_machine_xml_file)
+                    <p>Parses the given xml file and returns an array of state machine definition arrays.</p>
                 </td>
                 <td></td>
             </tr>
@@ -84,13 +87,12 @@
         <h2>Details</h2>
 
                         <h3 id="method___construct">
-        <div class="location">at line 27</div>
+        <div class="location">at line 45</div>
         <code>            public            
     <strong>__construct</strong>(array $options = array())</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Creates a new StateMachineDefinitionParser instance.</p>
         <p>
 </p>
         <div class="tags">
@@ -112,13 +114,12 @@
     </div>
 
                 <h3 id="method_parse">
-        <div class="location">at line 32</div>
-        <code>            public            
-    <strong>parse</strong>($state_machine_xml_file)</code>
+        <div class="location">at line 57</div>
+        <code>            public            array
+    <strong>parse</strong>(string $state_machine_xml_file)</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Parses the given xml file and returns an array of state machine definition arrays.</p>
         <p>
 </p>
         <div class="tags">
@@ -126,14 +127,23 @@
 
                     <table>
                     <tr>
-                <td></td>
+                <td>string</td>
                 <td>$state_machine_xml_file</td>
-                <td>
-</td>
+                <td>Vaild filesystem path to a xml file defining state machines.</td>
             </tr>
             </table>
 
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
             
             
                     </div>

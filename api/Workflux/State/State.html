@@ -27,6 +27,11 @@
     <strong>State</strong>        implements
         <a href="../../Workflux/State/StateInterface.html"><abbr title="Workflux\State\StateInterface">StateInterface</abbr></a></p>
 
+            <div class="description">
+            <p>The State class is a standard implementation of the StateInterface.</p>
+            <p>
+</p>
+        </div>
     
     
     
@@ -38,64 +43,58 @@
                     
                 </td>
                 <td class="last">
-                    <a href="#method___construct">__construct</a>($name, $type = self::TYPE_ACTIVE, array $options = array())
-                    <p>
-</p>
+                    <a href="#method___construct">__construct</a>(string $name, string $type = self::TYPE_ACTIVE, array $options = array())
+                    <p>Creates a new State instance.</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    
+                    string
                 </td>
                 <td class="last">
                     <a href="#method_getName">getName</a>()
-                    <p>
-</p>
+                    <p>Returns the state's name.</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    
+                    string
                 </td>
                 <td class="last">
                     <a href="#method_getType">getType</a>()
-                    <p>
-</p>
+                    <p>Returns the state's type.</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    
+                    bool
                 </td>
                 <td class="last">
                     <a href="#method_isInitial">isInitial</a>()
-                    <p>
-</p>
+                    <p>Tells if a the state is the initial state of the state machine it belongs to.</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    
+                    bool
                 </td>
                 <td class="last">
                     <a href="#method_isActive">isActive</a>()
-                    <p>
-</p>
+                    <p>Tells if a the state is a active state of the state machine it belongs to.</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    
+                    bool
                 </td>
                 <td class="last">
                     <a href="#method_isFinal">isFinal</a>()
-                    <p>
-</p>
+                    <p>Tells if a the state is a final state of the state machine it belongs to.</p>
                 </td>
                 <td></td>
             </tr>
@@ -105,8 +104,7 @@
                 </td>
                 <td class="last">
                     <a href="#method_onEntry">onEntry</a>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject)
-                    <p>
-</p>
+                    <p>Propagates the new state machine position to the execution context of the given subject, by calling the execution context's "onStateEntry" method.</p>
                 </td>
                 <td></td>
             </tr>
@@ -116,8 +114,7 @@
                 </td>
                 <td class="last">
                     <a href="#method_onExit">onExit</a>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject)
-                    <p>
-</p>
+                    <p>Propagates the new state machine position to the execution context of the given subject, by calling the execution context's "onStateExit" method.</p>
                 </td>
                 <td></td>
             </tr>
@@ -127,13 +124,12 @@
         <h2>Details</h2>
 
                         <h3 id="method___construct">
-        <div class="location">at line 18</div>
+        <div class="location">at line 34</div>
         <code>            public            
-    <strong>__construct</strong>($name, $type = self::TYPE_ACTIVE, array $options = array())</code>
+    <strong>__construct</strong>(string $name, string $type = self::TYPE_ACTIVE, array $options = array())</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Creates a new State instance.</p>
         <p>
 </p>
         <div class="tags">
@@ -141,13 +137,13 @@
 
                     <table>
                     <tr>
-                <td></td>
+                <td>string</td>
                 <td>$name</td>
                 <td>
 </td>
             </tr>
                     <tr>
-                <td></td>
+                <td>string</td>
                 <td>$type</td>
                 <td>
 </td>
@@ -167,98 +163,141 @@
     </div>
 
                 <h3 id="method_getName">
-        <div class="location">at line 27</div>
-        <code>            public            
+        <div class="location">at line 48</div>
+        <code>            public            string
     <strong>getName</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Returns the state's name.</p>
         <p>
 </p>
         <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
             
             
                     </div>
     </div>
 
                 <h3 id="method_getType">
-        <div class="location">at line 32</div>
-        <code>            public            
+        <div class="location">at line 58</div>
+        <code>            public            string
     <strong>getType</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Returns the state's type.</p>
         <p>
 </p>
         <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td>One the StateInterface::TYPE_* constant values.</td>
+        </tr>
+    </table>
+
             
             
                     </div>
     </div>
 
                 <h3 id="method_isInitial">
-        <div class="location">at line 37</div>
-        <code>            public            
+        <div class="location">at line 68</div>
+        <code>            public            bool
     <strong>isInitial</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Tells if a the state is the initial state of the state machine it belongs to.</p>
         <p>
 </p>
         <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>bool</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
             
             
                     </div>
     </div>
 
                 <h3 id="method_isActive">
-        <div class="location">at line 42</div>
-        <code>            public            
+        <div class="location">at line 78</div>
+        <code>            public            bool
     <strong>isActive</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Tells if a the state is a active state of the state machine it belongs to.</p>
         <p>
 </p>
         <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>bool</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
             
             
                     </div>
     </div>
 
                 <h3 id="method_isFinal">
-        <div class="location">at line 47</div>
-        <code>            public            
+        <div class="location">at line 88</div>
+        <code>            public            bool
     <strong>isFinal</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Tells if a the state is a final state of the state machine it belongs to.</p>
         <p>
 </p>
         <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>bool</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
             
             
                     </div>
     </div>
 
                 <h3 id="method_onEntry">
-        <div class="location">at line 52</div>
+        <div class="location">at line 99</div>
         <code>            public            
     <strong>onEntry</strong>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject)</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Propagates the new state machine position to the execution context of the given subject, by calling the execution context's "onStateEntry" method.</p>
         <p>
 </p>
         <div class="tags">
@@ -280,13 +319,12 @@
     </div>
 
                 <h3 id="method_onExit">
-        <div class="location">at line 57</div>
+        <div class="location">at line 110</div>
         <code>            public            
     <strong>onExit</strong>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject)</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Propagates the new state machine position to the execution context of the given subject, by calling the execution context's "onStateExit" method.</p>
         <p>
 </p>
         <div class="tags">

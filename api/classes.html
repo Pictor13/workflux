@@ -76,8 +76,7 @@
                                         <a href="Workflux/Error/Error.html" target="main"><abbr title="Workflux\Error\Error">Workflux\Error\Error</abbr></a>
                                     </td>
                 <td>
-                    
-
+                    Base class that all workflux errors/exceptions should extend.
                 </td>
             </tr>
                     <tr>
@@ -85,8 +84,7 @@
                                         <a href="Workflux/Error/VerificationError.html" target="main"><abbr title="Workflux\Error\VerificationError">Workflux\Error\VerificationError</abbr></a>
                                     </td>
                 <td>
-                    
-
+                    Represents an error in the context of verifying an expectation.
                 </td>
             </tr>
                     <tr>
@@ -94,8 +92,7 @@
                                         <a href="Workflux/ExecutionContext.html" target="main"><abbr title="Workflux\ExecutionContext">Workflux\ExecutionContext</abbr></a>
                                     </td>
                 <td>
-                    
-
+                    Standard implementation of the ExecutionContextInterface.
                 </td>
             </tr>
                     <tr>
@@ -103,8 +100,7 @@
                     <em>                    <a href="Workflux/ExecutionContextInterface.html" target="main"><abbr title="Workflux\ExecutionContextInterface">Workflux\ExecutionContextInterface</abbr></a>
                     </em>                </td>
                 <td>
-                    
-
+                    ExecutionContextInterface reflects the current state of execution of a subject inside a state machine.
                 </td>
             </tr>
                     <tr>
@@ -112,8 +108,7 @@
                                         <a href="Workflux/Guard/CallbackGuard.html" target="main"><abbr title="Workflux\Guard\CallbackGuard">Workflux\Guard\CallbackGuard</abbr></a>
                                     </td>
                 <td>
-                    
-
+                    The CallbackGuard employs it's verification strategy by simply delegating the verification to a given callback.
                 </td>
             </tr>
                     <tr>
@@ -121,8 +116,7 @@
                                         <a href="Workflux/Guard/ConfigurableGuard.html" target="main"><abbr title="Workflux\Guard\ConfigurableGuard">Workflux\Guard\ConfigurableGuard</abbr></a>
                                     </td>
                 <td>
-                    
-
+                    The ConfigurableGuard is a base class that allows you to implement configurable GuardInterface implementations.
                 </td>
             </tr>
                     <tr>
@@ -130,8 +124,7 @@
                                         <a href="Workflux/Guard/ExpressionGuard.html" target="main"><abbr title="Workflux\Guard\ExpressionGuard">Workflux\Guard\ExpressionGuard</abbr></a>
                                     </td>
                 <td>
-                    
-
+                    The ExpressionGuard employs it's verfification based on the evaluation of a given (symfony) expression.
                 </td>
             </tr>
                     <tr>
@@ -139,8 +132,7 @@
                     <em>                    <a href="Workflux/Guard/GuardInterface.html" target="main"><abbr title="Workflux\Guard\GuardInterface">Workflux\Guard\GuardInterface</abbr></a>
                     </em>                </td>
                 <td>
-                    
-
+                    GuardInterface implementations are supposed to check, if a given subject is acceptable in the context of transitioning from one state to another.
                 </td>
             </tr>
                     <tr>
@@ -148,8 +140,7 @@
                     <em>                    <a href="Workflux/Parser/ParserInterface.html" target="main"><abbr title="Workflux\Parser\ParserInterface">Workflux\Parser\ParserInterface</abbr></a>
                     </em>                </td>
                 <td>
-                    
-
+                    ParserInterface implementations are supposed to parse specific payload and turn it into a common array structure, that is expected by the StateMachineBuilderInterface.
                 </td>
             </tr>
                     <tr>
@@ -157,8 +148,7 @@
                                         <a href="Workflux/Parser/Xml/StateMachineDefinitionParser.html" target="main"><abbr title="Workflux\Parser\Xml\StateMachineDefinitionParser">Workflux\Parser\Xml\StateMachineDefinitionParser</abbr></a>
                                     </td>
                 <td>
-                    
-
+                    The StateMachineDefinitionParser can parse xml state machine definitions and provides an array, that is structured the way the StateMachineBuilder expects.
                 </td>
             </tr>
                     <tr>
@@ -166,8 +156,7 @@
                                         <a href="Workflux/Renderer/AbstractRenderer.html" target="main"><abbr title="Workflux\Renderer\AbstractRenderer">Workflux\Renderer\AbstractRenderer</abbr></a>
                                     </td>
                 <td>
-                    
-
+                    The AbstractRenderer is a base class that allows you to implement configurable GraphRendererInterface implementations.
                 </td>
             </tr>
                     <tr>
@@ -175,8 +164,7 @@
                                         <a href="Workflux/Renderer/DotGraphRenderer.html" target="main"><abbr title="Workflux\Renderer\DotGraphRenderer">Workflux\Renderer\DotGraphRenderer</abbr></a>
                                     </td>
                 <td>
-                    
-
+                    The DotGraphRenderer can render state machines as dot-graphs.
                 </td>
             </tr>
                     <tr>
@@ -184,8 +172,7 @@
                     <em>                    <a href="Workflux/Renderer/GraphRendererInterface.html" target="main"><abbr title="Workflux\Renderer\GraphRendererInterface">Workflux\Renderer\GraphRendererInterface</abbr></a>
                     </em>                </td>
                 <td>
-                    
-
+                    GraphRendererInterface implementations are expected to render StateMachineInterface instances into any kind of specific output format, like for example xml, yaml or dot.
                 </td>
             </tr>
                     <tr>
@@ -202,8 +189,7 @@
                     <em>                    <a href="Workflux/StateMachine/StateMachineInterface.html" target="main"><abbr title="Workflux\StateMachine\StateMachineInterface">Workflux\StateMachine\StateMachineInterface</abbr></a>
                     </em>                </td>
                 <td>
-                    
-
+                    StateMachineInterface implementations are expected to act as event triggered finite state machines.
                 </td>
             </tr>
                     <tr>
@@ -211,8 +197,7 @@
                                         <a href="Workflux/State/State.html" target="main"><abbr title="Workflux\State\State">Workflux\State\State</abbr></a>
                                     </td>
                 <td>
-                    
-
+                    The State class is a standard implementation of the StateInterface.
                 </td>
             </tr>
                     <tr>
@@ -220,8 +205,7 @@
                     <em>                    <a href="Workflux/State/StateInterface.html" target="main"><abbr title="Workflux\State\StateInterface">Workflux\State\StateInterface</abbr></a>
                     </em>                </td>
                 <td>
-                    
-
+                    StateInterface implementations are expected to act as a nodes that are part of a state graph.
                 </td>
             </tr>
                     <tr>
@@ -229,8 +213,7 @@
                     <em>                    <a href="Workflux/StatefulSubjectInterface.html" target="main"><abbr title="Workflux\StatefulSubjectInterface">Workflux\StatefulSubjectInterface</abbr></a>
                     </em>                </td>
                 <td>
-                    
-
+                    StatefulSubjectInterface provides the main contract between any external objects and the workflux statemachine.
                 </td>
             </tr>
                     <tr>
@@ -238,8 +221,7 @@
                                         <a href="Workflux/Transition/Transition.html" target="main"><abbr title="Workflux\Transition\Transition">Workflux\Transition\Transition</abbr></a>
                                     </td>
                 <td>
-                    
-
+                    Standard implementation of the TransitionInterface.
                 </td>
             </tr>
                     <tr>
@@ -247,8 +229,7 @@
                     <em>                    <a href="Workflux/Transition/TransitionInterface.html" target="main"><abbr title="Workflux\Transition\TransitionInterface">Workflux\Transition\TransitionInterface</abbr></a>
                     </em>                </td>
                 <td>
-                    
-
+                    TransitionInterface implementations model the connections between states.
                 </td>
             </tr>
             </table>
