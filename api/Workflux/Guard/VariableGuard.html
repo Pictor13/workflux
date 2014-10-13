@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="robots" content="index, follow, all" />
-        <title>Workflux\Guard\CallbackGuard | Workflux API</title>
+        <title>Workflux\Guard\VariableGuard | Workflux API</title>
                     <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
                             </head>
         <body id="class">
@@ -20,17 +20,15 @@
         <div id="title">Workflux API</div>
 
             <div class="type">Class</div>
-    <h1><a href="../../Workflux/Guard.html">Workflux\Guard</a>\CallbackGuard</h1>
+    <h1><a href="../../Workflux/Guard.html">Workflux\Guard</a>\VariableGuard</h1>
     </div>
         <div class="content">
                 <p>    class
-    <strong>CallbackGuard</strong>        implements
-        <a href="../../Workflux/Guard/GuardInterface.html"><abbr title="Workflux\Guard\GuardInterface">GuardInterface</abbr></a></p>
+    <strong>VariableGuard</strong>        extends <a href="../../Workflux/Guard/ExpressionGuard.html"><abbr title="Workflux\Guard\ExpressionGuard">ExpressionGuard</abbr></a></p>
 
             <div class="description">
-            <p>The CallbackGuard employs it's verification strategy by simply delegating the verification to a given callback.</p>
-            <p>
-</p>
+            <p>The VariableGuard employs it's verfification based on the evaluation of a given (symfony) expression.</p>
+            <p>It makes all execution context parameters directly addressable within the expression.</p>
         </div>
     
     
@@ -43,10 +41,10 @@
                     
                 </td>
                 <td class="last">
-                    <a href="#method___construct">__construct</a>(callable $callback)
-                    <p>Creates a new CallbackGuard instance.</p>
+                    <a href="#method___construct">__construct</a>(array $options = array())
+                    <p>Creates a new ConfigurableGuard instance, thereby setting the given options.</p>
                 </td>
-                <td></td>
+                <td><small>from&nbsp;<a href="../../Workflux/Guard/ExpressionGuard.html#method___construct"><abbr title="Workflux\Guard\ExpressionGuard">ExpressionGuard</abbr></a></small></td>
             </tr>
                     <tr>
                 <td class="type">
@@ -54,7 +52,7 @@
                 </td>
                 <td class="last">
                     <a href="#method_accept">accept</a>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject)
-                    <p>Tells if a given stateful subject is acceptable and may transit.</p>
+                    <p>Evaluates the configured (symfony) expression for the given subject.</p>
                 </td>
                 <td></td>
             </tr>
@@ -67,7 +65,7 @@
                     <p>
 </p>
                 </td>
-                <td></td>
+                <td><small>from&nbsp;<a href="../../Workflux/Guard/ExpressionGuard.html#method___toString"><abbr title="Workflux\Guard\ExpressionGuard">ExpressionGuard</abbr></a></small></td>
             </tr>
             </table>
 
@@ -75,12 +73,12 @@
         <h2>Details</h2>
 
                         <h3 id="method___construct">
-        <div class="location">at line 22</div>
+        <div class="location">in <a href="../../Workflux/Guard/ExpressionGuard.html#method___construct"><abbr title="Workflux\Guard\ExpressionGuard">ExpressionGuard</abbr></a> at line 26</div>
         <code>            public            
-    <strong>__construct</strong>(callable $callback)</code>
+    <strong>__construct</strong>(array $options = array())</code>
     </h3>
     <div class="details">
-        <p>Creates a new CallbackGuard instance.</p>
+        <p>Creates a new ConfigurableGuard instance, thereby setting the given options.</p>
         <p>
 </p>
         <div class="tags">
@@ -88,8 +86,8 @@
 
                     <table>
                     <tr>
-                <td>callable</td>
-                <td>$callback</td>
+                <td>array</td>
+                <td>$options</td>
                 <td>
 </td>
             </tr>
@@ -102,12 +100,12 @@
     </div>
 
                 <h3 id="method_accept">
-        <div class="location">at line 34</div>
+        <div class="location">at line 20</div>
         <code>            public            boolean
     <strong>accept</strong>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject)</code>
     </h3>
     <div class="details">
-        <p>Tells if a given stateful subject is acceptable and may transit.</p>
+        <p>Evaluates the configured (symfony) expression for the given subject.</p>
         <p>
 </p>
         <div class="tags">
@@ -139,7 +137,7 @@
     </div>
 
                 <h3 id="method___toString">
-        <div class="location">at line 44</div>
+        <div class="location">in <a href="../../Workflux/Guard/ExpressionGuard.html#method___toString"><abbr title="Workflux\Guard\ExpressionGuard">ExpressionGuard</abbr></a> at line 55</div>
         <code>            public            string
     <strong>__toString</strong>()</code>
     </h3>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="index, follow, all" />
+        <title>Workflux\Parser\Xml\OptionsXpathParser | Workflux API</title>
+                    <link rel="stylesheet" type="text/css" href="../../../stylesheet.css">
+                            </head>
+        <body id="class">
+            <div class="header">
+        <ul>
+            <li><a href="../../../classes.html">Classes</a></li>
+                            <li><a href="../../../namespaces.html">Namespaces</a></li>
+                        <li><a href="../../../interfaces.html">Interfaces</a></li>
+            <li><a href="../../../traits.html">Traits</a></li>
+            <li><a href="../../../doc-index.html">Index</a></li>
+            
+        </ul>
+
+        <div id="title">Workflux API</div>
+
+            <div class="type">Class</div>
+    <h1><a href="../../../Workflux/Parser/Xml.html">Workflux\Parser\Xml</a>\OptionsXpathParser</h1>
+    </div>
+        <div class="content">
+                <p>    class
+    <strong>OptionsXpathParser</strong>        implements
+        <a href="../../../Workflux/Parser/ParserInterface.html"><abbr title="Workflux\Parser\ParserInterface">ParserInterface</abbr></a></p>
+
+            <div class="description">
+            <p>The OptionsXpathParser can parse 'options' that are defined below a given context node.</p>
+            <p>
+</p>
+        </div>
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method___construct">__construct</a>(<a href="../../../Workflux/Parser/Xml/Xpath.html"><abbr title="Workflux\Parser\Xml\Xpath">Xpath</abbr></a> $xpath)
+                    <p>Creates a new OptionsXpathParser instance that uses the given xpath.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    static&nbsp;string
+                </td>
+                <td class="last">
+                    <a href="#method_literalize">literalize</a>(string $value)
+                    <p>Takes a xml node value and casts it to it's php scalar counterpart.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    static&nbsp;string
+                </td>
+                <td class="last">
+                    <a href="#method_literalizeString">literalizeString</a>(string $value)
+                    <p>Takes an xml node value and returns it either as a string or boolean.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    mixed
+                </td>
+                <td class="last">
+                    <a href="#method_parse">parse</a>(mixed $options_context)
+                    <p>Parses all options below the given 'options context' in an array.</p>
+                </td>
+                <td></td>
+            </tr>
+            </table>
+
+
+        <h2>Details</h2>
+
+                        <h3 id="method___construct">
+        <div class="location">at line 24</div>
+        <code>            public            
+    <strong>__construct</strong>(<a href="../../../Workflux/Parser/Xml/Xpath.html"><abbr title="Workflux\Parser\Xml\Xpath">Xpath</abbr></a> $xpath)</code>
+    </h3>
+    <div class="details">
+        <p>Creates a new OptionsXpathParser instance that uses the given xpath.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="../../../Workflux/Parser/Xml/Xpath.html"><abbr title="Workflux\Parser\Xml\Xpath">Xpath</abbr></a></td>
+                <td>$xpath</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_literalize">
+        <div class="location">at line 36</div>
+        <code>        static    public            string
+    <strong>literalize</strong>(string $value)</code>
+    </h3>
+    <div class="details">
+        <p>Takes a xml node value and casts it to it's php scalar counterpart.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$value</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td>| boolean | int</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_literalizeString">
+        <div class="location">at line 52</div>
+        <code>        static    public            string
+    <strong>literalizeString</strong>(string $value)</code>
+    </h3>
+    <div class="details">
+        <p>Takes an xml node value and returns it either as a string or boolean.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$value</td>
+                <td>Following values are cast to bool true/false: on, yes, true/off, no, false</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td>| boolean</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_parse">
+        <div class="location">at line 79</div>
+        <code>            public            mixed
+    <strong>parse</strong>(mixed $options_context)</code>
+    </h3>
+    <div class="details">
+        <p>Parses all options below the given 'options context' in an array.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>mixed</td>
+                <td>$options_context</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>mixed</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+    
+            </div>
+            <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/" target="_top">Sami, the API Documentation Generator</a>.
+    </div>
+    </body>
+</html>

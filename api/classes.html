@@ -137,10 +137,34 @@
             </tr>
                     <tr>
                 <td>
+                                        <a href="Workflux/Guard/VariableGuard.html" target="main"><abbr title="Workflux\Guard\VariableGuard">Workflux\Guard\VariableGuard</abbr></a>
+                                    </td>
+                <td>
+                    The VariableGuard employs it's verfification based on the evaluation of a given (symfony) expression.
+                </td>
+            </tr>
+                    <tr>
+                <td>
                     <em>                    <a href="Workflux/Parser/ParserInterface.html" target="main"><abbr title="Workflux\Parser\ParserInterface">Workflux\Parser\ParserInterface</abbr></a>
                     </em>                </td>
                 <td>
                     ParserInterface implementations are supposed to parse specific payload and turn it into a common array structure, that is expected by the StateMachineBuilderInterface.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                        <a href="Workflux/Parser/Xml/AbstractXmlParser.html" target="main"><abbr title="Workflux\Parser\Xml\AbstractXmlParser">Workflux\Parser\Xml\AbstractXmlParser</abbr></a>
+                                    </td>
+                <td>
+                    The AbstsractXmlParser serves as base class for xml parsers.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                        <a href="Workflux/Parser/Xml/OptionsXpathParser.html" target="main"><abbr title="Workflux\Parser\Xml\OptionsXpathParser">Workflux\Parser\Xml\OptionsXpathParser</abbr></a>
+                                    </td>
+                <td>
+                    The OptionsXpathParser can parse 'options' that are defined below a given context node.
                 </td>
             </tr>
                     <tr>
@@ -153,10 +177,18 @@
             </tr>
                     <tr>
                 <td>
+                                        <a href="Workflux/Parser/Xml/Xpath.html" target="main"><abbr title="Workflux\Parser\Xml\Xpath">Workflux\Parser\Xml\Xpath</abbr></a>
+                                    </td>
+                <td>
+                    The Xpath class is a conveniece wrapper around DOMXpath and simple adds a namespace prefix to queries.
+                </td>
+            </tr>
+                    <tr>
+                <td>
                                         <a href="Workflux/Renderer/AbstractRenderer.html" target="main"><abbr title="Workflux\Renderer\AbstractRenderer">Workflux\Renderer\AbstractRenderer</abbr></a>
                                     </td>
                 <td>
-                    The AbstractRenderer is a base class that allows you to implement configurable GraphRendererInterface implementations.
+                    The AbstractRenderer is a base class, that allows you to implement configurable GraphRendererInterface implementations.
                 </td>
             </tr>
                     <tr>
@@ -206,6 +238,14 @@
                     </em>                </td>
                 <td>
                     StateInterface implementations are expected to act as a nodes that are part of a state graph.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                        <a href="Workflux/State/VariableState.html" target="main"><abbr title="Workflux\State\VariableState">Workflux\State\VariableState</abbr></a>
+                                    </td>
+                <td>
+                    The VariableState class set and removes variables when it transition callbacks (onEntry, onExit) are invoked.
                 </td>
             </tr>
                     <tr>

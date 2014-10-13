@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="robots" content="index, follow, all" />
-        <title>Workflux\State\State | Workflux API</title>
+        <title>Workflux\State\VariableState | Workflux API</title>
                     <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
                             </head>
         <body id="class">
@@ -20,19 +20,41 @@
         <div id="title">Workflux API</div>
 
             <div class="type">Class</div>
-    <h1><a href="../../Workflux/State.html">Workflux\State</a>\State</h1>
+    <h1><a href="../../Workflux/State.html">Workflux\State</a>\VariableState</h1>
     </div>
         <div class="content">
                 <p>    class
-    <strong>State</strong>        implements
-        <a href="../../Workflux/State/StateInterface.html"><abbr title="Workflux\State\StateInterface">StateInterface</abbr></a></p>
+    <strong>VariableState</strong>        extends <a href="../../Workflux/State/State.html"><abbr title="Workflux\State\State">State</abbr></a></p>
 
             <div class="description">
-            <p>The State class is a standard implementation of the StateInterface.</p>
+            <p>The VariableState class set and removes variables when it transition callbacks (onEntry, onExit) are invoked.</p>
             <p>
 </p>
         </div>
     
+            <h2>Constants</h2>
+
+            <table>
+                    <tr>
+                <td>OPTION_VARS</td>
+                <td class="last">
+                    <p><em>
+</em></p>
+                    <p>
+</p>
+                </td>
+            </tr>
+                    <tr>
+                <td>OPTION_REMOVE_VARS</td>
+                <td class="last">
+                    <p><em>
+</em></p>
+                    <p>
+</p>
+                </td>
+            </tr>
+            </table>
+
     
     
             <h2>Methods</h2>
@@ -46,7 +68,7 @@
                     <a href="#method___construct">__construct</a>(string $name, string $type = self::TYPE_ACTIVE, array $options = array())
                     <p>Creates a new State instance.</p>
                 </td>
-                <td></td>
+                <td><small>from&nbsp;<a href="../../Workflux/State/State.html#method___construct"><abbr title="Workflux\State\State">State</abbr></a></small></td>
             </tr>
                     <tr>
                 <td class="type">
@@ -56,7 +78,7 @@
                     <a href="#method_getName">getName</a>()
                     <p>Returns the state's name.</p>
                 </td>
-                <td></td>
+                <td><small>from&nbsp;<a href="../../Workflux/State/State.html#method_getName"><abbr title="Workflux\State\State">State</abbr></a></small></td>
             </tr>
                     <tr>
                 <td class="type">
@@ -66,7 +88,7 @@
                     <a href="#method_getType">getType</a>()
                     <p>Returns the state's type.</p>
                 </td>
-                <td></td>
+                <td><small>from&nbsp;<a href="../../Workflux/State/State.html#method_getType"><abbr title="Workflux\State\State">State</abbr></a></small></td>
             </tr>
                     <tr>
                 <td class="type">
@@ -76,7 +98,7 @@
                     <a href="#method_isInitial">isInitial</a>()
                     <p>Tells if a the state is the initial state of the state machine it belongs to.</p>
                 </td>
-                <td></td>
+                <td><small>from&nbsp;<a href="../../Workflux/State/State.html#method_isInitial"><abbr title="Workflux\State\State">State</abbr></a></small></td>
             </tr>
                     <tr>
                 <td class="type">
@@ -86,7 +108,7 @@
                     <a href="#method_isActive">isActive</a>()
                     <p>Tells if a the state is a active state of the state machine it belongs to.</p>
                 </td>
-                <td></td>
+                <td><small>from&nbsp;<a href="../../Workflux/State/State.html#method_isActive"><abbr title="Workflux\State\State">State</abbr></a></small></td>
             </tr>
                     <tr>
                 <td class="type">
@@ -96,7 +118,7 @@
                     <a href="#method_isFinal">isFinal</a>()
                     <p>Tells if a the state is an final state of the state machine it belongs to.</p>
                 </td>
-                <td></td>
+                <td><small>from&nbsp;<a href="../../Workflux/State/State.html#method_isFinal"><abbr title="Workflux\State\State">State</abbr></a></small></td>
             </tr>
                     <tr>
                 <td class="type">
@@ -104,7 +126,7 @@
                 </td>
                 <td class="last">
                     <a href="#method_onEntry">onEntry</a>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject)
-                    <p>Runs a specific action when the parent state machine enters this state.</p>
+                    <p>Propagates the new state machine position to the execution context of the given subject, by calling the execution context's "onStateEntry" method.</p>
                 </td>
                 <td></td>
             </tr>
@@ -114,7 +136,7 @@
                 </td>
                 <td class="last">
                     <a href="#method_onExit">onExit</a>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject)
-                    <p>Runs a specific action when the parent state machine exits this state.</p>
+                    <p>Propagates the new state machine position to the execution context of the given subject, by calling the execution context's "onStateExit" method.</p>
                 </td>
                 <td></td>
             </tr>
@@ -124,7 +146,7 @@
         <h2>Details</h2>
 
                         <h3 id="method___construct">
-        <div class="location">at line 34</div>
+        <div class="location">in <a href="../../Workflux/State/State.html#method___construct"><abbr title="Workflux\State\State">State</abbr></a> at line 34</div>
         <code>            public            
     <strong>__construct</strong>(string $name, string $type = self::TYPE_ACTIVE, array $options = array())</code>
     </h3>
@@ -163,7 +185,7 @@
     </div>
 
                 <h3 id="method_getName">
-        <div class="location">at line 48</div>
+        <div class="location">in <a href="../../Workflux/State/State.html#method_getName"><abbr title="Workflux\State\State">State</abbr></a> at line 48</div>
         <code>            public            string
     <strong>getName</strong>()</code>
     </h3>
@@ -189,7 +211,7 @@
     </div>
 
                 <h3 id="method_getType">
-        <div class="location">at line 58</div>
+        <div class="location">in <a href="../../Workflux/State/State.html#method_getType"><abbr title="Workflux\State\State">State</abbr></a> at line 58</div>
         <code>            public            string
     <strong>getType</strong>()</code>
     </h3>
@@ -214,7 +236,7 @@
     </div>
 
                 <h3 id="method_isInitial">
-        <div class="location">at line 68</div>
+        <div class="location">in <a href="../../Workflux/State/State.html#method_isInitial"><abbr title="Workflux\State\State">State</abbr></a> at line 68</div>
         <code>            public            bool
     <strong>isInitial</strong>()</code>
     </h3>
@@ -240,7 +262,7 @@
     </div>
 
                 <h3 id="method_isActive">
-        <div class="location">at line 78</div>
+        <div class="location">in <a href="../../Workflux/State/State.html#method_isActive"><abbr title="Workflux\State\State">State</abbr></a> at line 78</div>
         <code>            public            bool
     <strong>isActive</strong>()</code>
     </h3>
@@ -266,7 +288,7 @@
     </div>
 
                 <h3 id="method_isFinal">
-        <div class="location">at line 88</div>
+        <div class="location">in <a href="../../Workflux/State/State.html#method_isFinal"><abbr title="Workflux\State\State">State</abbr></a> at line 88</div>
         <code>            public            bool
     <strong>isFinal</strong>()</code>
     </h3>
@@ -292,12 +314,12 @@
     </div>
 
                 <h3 id="method_onEntry">
-        <div class="location">at line 99</div>
+        <div class="location">at line 28</div>
         <code>            public            
     <strong>onEntry</strong>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject)</code>
     </h3>
     <div class="details">
-        <p>Runs a specific action when the parent state machine enters this state.</p>
+        <p>Propagates the new state machine position to the execution context of the given subject, by calling the execution context's "onStateEntry" method.</p>
         <p>
 </p>
         <div class="tags">
@@ -319,12 +341,12 @@
     </div>
 
                 <h3 id="method_onExit">
-        <div class="location">at line 110</div>
+        <div class="location">at line 43</div>
         <code>            public            
     <strong>onExit</strong>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject)</code>
     </h3>
     <div class="details">
-        <p>Runs a specific action when the parent state machine exits this state.</p>
+        <p>Propagates the new state machine position to the execution context of the given subject, by calling the execution context's "onStateExit" method.</p>
         <p>
 </p>
         <div class="tags">
