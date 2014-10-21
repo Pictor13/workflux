@@ -34,6 +34,7 @@
 <a href="https://coveralls.io/r/shrink0r/workflux?branch=master"><img src="https://coveralls.io/repos/shrink0r/workflux/badge.png?branch=master" alt="Coverage Status"></a>
 <a href="https://www.versioneye.com/user/projects/542da521fc3f5ca427000299"><img src="https://www.versioneye.com/user/projects/542da521fc3f5ca427000299/badge.svg?style=flat" alt="Dependency Status"></a>
 <a href="https://scrutinizer-ci.com/g/shrink0r/workflux/?branch=master"><img src="https://scrutinizer-ci.com/g/shrink0r/workflux/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality"></a>
+<a href="https://codeclimate.com/github/shrink0r/workflux"><img src="https://codeclimate.com/github/shrink0r/workflux/badges/gpa.svg" alt="Code Climate"></a>
 <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img src="https://poser.pugx.org/shrink0r/workflux/license.svg" alt="License"></a>
 <a href="https://insight.sensiolabs.com/projects/c9d87c4a-f2f6-4f10-847e-8a9162d306d9"><img src="https://insight.sensiolabs.com/projects/c9d87c4a-f2f6-4f10-847e-8a9162d306d9/mini.png" alt="SensioLabsInsight"></a>
 <a href="https://waffle.io/shrink0r/workflux"><img src="https://badge.waffle.io/shrink0r/workflux.png?label=ready&amp;title=Issues%20Open" alt="Stories in Ready"></a></p>
@@ -41,8 +42,16 @@
 <h2>
 <a name="purpose" class="anchor" href="#purpose"><span class="octicon octicon-link"></span></a>Purpose</h2>
 
-<p>The <code>workflux</code> library implements a <a href="http://en.wikipedia.org/wiki/Finite-state_machine">Finite State Machine</a> in a way
-that also allows to implement <a href="http://en.wikipedia.org/wiki/Pushdown_automaton">Pushdown Automaton</a> and other FSM flavors.</p>
+<p><code>Workflux</code> is a <a href="http://en.wikipedia.org/wiki/Finite-state_machine">Finite State Machine(FSM)</a> for php.
+It's supposed to be useful for implementing all kinds of FSM suiting scenarios like e.g. workflows or matching.
+Here are two reads on the topic, dealing with why/where you might want to use a FSM.</p>
+
+<ul>
+<li><a href="http://www.shopify.com/technology/3383012-why-developers-should-be-force-fed-state-machines">Why developers should be force-fed state machines</a></li>
+<li><a href="http://www.skorks.com/2011/09/why-developers-never-use-state-machines/">Why Developers Never Use State Machines</a></li>
+</ul>
+
+<p>Below is an example of a state machine instance rendered by the library's DotGraphRenderer + <a href="http://www.graphviz.org">Graphviz</a>.</p>
 
 <p><img src="https://raw.githubusercontent.com/shrink0r/workflux/master/docs/state_machine.png" alt="Screenshot of a rendered example state machine"></p>
 
@@ -62,7 +71,7 @@ of your project works as well:</p>
 
 <div class="highlight highlight-json"><pre><span class="p">{</span>
     <span class="nt">"require"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">"shrink0r/workflux"</span><span class="p">:</span> <span class="s2">"~0.4"</span>
+        <span class="nt">"shrink0r/workflux"</span><span class="p">:</span> <span class="s2">"~0.5"</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -72,12 +81,15 @@ of your project works as well:</p>
 <h2>
 <a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h2>
 
+<p>At the moment there are some basic usage examples and a completed API doc.<br>
+The brave may look into the <code>tests</code> folder for more insights. ^^<br>
+More documentation is up the pipeline.<br>
+Until then, feel free to ask via irc or issues tracker.</p>
+
 <ul>
 <li><a href="http://shrink0r.github.io/workflux/api/index.html">API Doc</a></li>
 <li><a href="https://github.com/shrink0r/workflux/blob/master/docs/usage.md">Usage</a></li>
 </ul>
-
-<p>For more feature and usage examples see the <a href="tests">tests</a>.</p>
 
 <h2>
 <a name="community" class="anchor" href="#community"><span class="octicon octicon-link"></span></a>Community</h2>
