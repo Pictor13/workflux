@@ -112,7 +112,7 @@
                 </td>
                 <td class="last">
                     <a href="#method___construct">__construct</a>(string $name, array $states, array $transitions, <abbr title="Evenement\EventEmitterInterface">EventEmitterInterface</abbr> $event_emitter = null)
-                    <p>Creates a new EventEmittingStateMachine instance, by either using a given event emitter or otherwise creating it's own.</p>
+                    <p>Creates a new StateMachine instance.</p>
                 </td>
                 <td></td>
             </tr>
@@ -172,7 +172,7 @@
                 </td>
                 <td class="last">
                     <a href="#method_execute">execute</a>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject, $transition_event = null)
-                    <p>Overrides the "StateMachine::execute" method in order to support/emit the ON<em>EXECUTION</em>SUSPENDED and ON<em>EXECUTION</em>FINISHED events.</p>
+                    <p>Executes the state machine against the execution context of the given subject.</p>
                 </td>
                 <td></td>
             </tr>
@@ -277,7 +277,7 @@
     <strong>__construct</strong>(string $name, array $states, array $transitions, <abbr title="Evenement\EventEmitterInterface">EventEmitterInterface</abbr> $event_emitter = null)</code>
     </h3>
     <div class="details">
-        <p>Creates a new EventEmittingStateMachine instance, by either using a given event emitter or otherwise creating it's own.</p>
+        <p>Creates a new StateMachine instance.</p>
         <p>
 </p>
         <div class="tags">
@@ -461,9 +461,8 @@
     <strong>execute</strong>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject, $transition_event = null)</code>
     </h3>
     <div class="details">
-        <p>Overrides the "StateMachine::execute" method in order to support/emit the ON<em>EXECUTION</em>SUSPENDED and ON<em>EXECUTION</em>FINISHED events.</p>
-        <p>
-</p>
+        <p>Executes the state machine against the execution context of the given subject.</p>
+        <p>The state machine will traverse the graph until it reaches an event- or final-state.</p>
         <div class="tags">
                             <h4>Parameters</h4>
 
