@@ -126,7 +126,7 @@
                 </td>
                 <td class="last">
                     <a href="#method_onEntry">onEntry</a>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject)
-                    <p>Propagates the new state machine position to the execution context of the given subject, by calling the execution context's "onStateEntry" method.</p>
+                    <p>Runs a specific action when the parent state machine enters this state.</p>
                 </td>
                 <td></td>
             </tr>
@@ -136,7 +136,7 @@
                 </td>
                 <td class="last">
                     <a href="#method_onExit">onExit</a>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject)
-                    <p>Propagates the new state machine position to the execution context of the given subject, by calling the execution context's "onStateExit" method.</p>
+                    <p>Runs a specific action when the parent state machine exits this state.</p>
                 </td>
                 <td></td>
             </tr>
@@ -319,7 +319,7 @@
     <strong>onEntry</strong>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject)</code>
     </h3>
     <div class="details">
-        <p>Propagates the new state machine position to the execution context of the given subject, by calling the execution context's "onStateEntry" method.</p>
+        <p>Runs a specific action when the parent state machine enters this state.</p>
         <p>
 </p>
         <div class="tags">
@@ -346,7 +346,7 @@
     <strong>onExit</strong>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject)</code>
     </h3>
     <div class="details">
-        <p>Propagates the new state machine position to the execution context of the given subject, by calling the execution context's "onStateExit" method.</p>
+        <p>Runs a specific action when the parent state machine exits this state.</p>
         <p>
 </p>
         <div class="tags">

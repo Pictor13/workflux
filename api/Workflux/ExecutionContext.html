@@ -43,7 +43,7 @@
                     
                 </td>
                 <td class="last">
-                    <a href="#method___construct">__construct</a>(string $state_machine_name, string $current_state_name, array $attributes = array())
+                    <a href="#method___construct">__construct</a>(string $state_machine_name, string $current_state_name = null, array $attributes = array())
                     <p>Creates a new ExecutionContext instance.</p>
                 </td>
                 <td></td>
@@ -74,7 +74,7 @@
                 </td>
                 <td class="last">
                     <a href="#method_onStateEntry">onStateEntry</a>(<a href="../Workflux/State/StateInterface.html"><abbr title="Workflux\State\StateInterface">StateInterface</abbr></a> $state)
-                    <p>Is called when the state machine enters a new state.</p>
+                    <p>Sets the current state name.</p>
                 </td>
                 <td></td>
             </tr>
@@ -96,7 +96,7 @@
                         <h3 id="method___construct">
         <div class="location">at line 37</div>
         <code>            public            
-    <strong>__construct</strong>(string $state_machine_name, string $current_state_name, array $attributes = array())</code>
+    <strong>__construct</strong>(string $state_machine_name, string $current_state_name = null, array $attributes = array())</code>
     </h3>
     <div class="details">
         <p>Creates a new ExecutionContext instance.</p>
@@ -190,9 +190,8 @@
     <strong>onStateEntry</strong>(<a href="../Workflux/State/StateInterface.html"><abbr title="Workflux\State\StateInterface">StateInterface</abbr></a> $state)</code>
     </h3>
     <div class="details">
-        <p>Is called when the state machine enters a new state.</p>
-        <p>
-</p>
+        <p>Sets the current state name.</p>
+        <p>Is called when the state machine enters a new state</p>
         <div class="tags">
                             <h4>Parameters</h4>
 

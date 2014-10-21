@@ -27,6 +27,11 @@
     <strong>StateMachine</strong>        implements
         <a href="../../Workflux/StateMachine/StateMachineInterface.html"><abbr title="Workflux\StateMachine\StateMachineInterface">StateMachineInterface</abbr></a></p>
 
+            <div class="description">
+            <p>General default implementation of the StateMachineInterface.</p>
+            <p>
+</p>
+        </div>
     
             <h2>Constants</h2>
 
@@ -112,7 +117,7 @@
                     <a href="../../Workflux/State/StateInterface.html"><abbr title="Workflux\State\StateInterface">StateInterface</abbr></a>
                 </td>
                 <td class="last">
-                    <a href="#method_execute">execute</a>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject, string $event_name)
+                    <a href="#method_execute">execute</a>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject, string $event_name = null)
                     <p>Executes the state machine against the execution context of the given subject.</p>
                 </td>
                 <td></td>
@@ -143,7 +148,7 @@
                 </td>
                 <td class="last">
                     <a href="#method_getTransitions">getTransitions</a>(string $state_name = &#039;&#039;, string $event_name = &#039;&#039;)
-                    <p>Depending on what parameters are set either all transitions are returned or a filtered subset.</p>
+                    <p>Depending on what parameters are set either returns all transitions for a given state or just the state transitions for a particular event.</p>
                 </td>
                 <td></td>
             </tr>
@@ -153,7 +158,7 @@
         <h2>Details</h2>
 
                         <h3 id="method___construct">
-        <div class="location">at line 54</div>
+        <div class="location">at line 57</div>
         <code>            public            
     <strong>__construct</strong>(string $name, array $states, array $transitions)</code>
     </h3>
@@ -192,7 +197,7 @@
     </div>
 
                 <h3 id="method_getName">
-        <div class="location">at line 74</div>
+        <div class="location">at line 77</div>
         <code>            public            string
     <strong>getName</strong>()</code>
     </h3>
@@ -218,7 +223,7 @@
     </div>
 
                 <h3 id="method_getInitialState">
-        <div class="location">at line 84</div>
+        <div class="location">at line 87</div>
         <code>            public            <a href="../../Workflux/State/StateInterface.html"><abbr title="Workflux\State\StateInterface">StateInterface</abbr></a>
     <strong>getInitialState</strong>()</code>
     </h3>
@@ -244,7 +249,7 @@
     </div>
 
                 <h3 id="method_getFinalStates">
-        <div class="location">at line 94</div>
+        <div class="location">at line 97</div>
         <code>            public            array
     <strong>getFinalStates</strong>()</code>
     </h3>
@@ -269,7 +274,7 @@
     </div>
 
                 <h3 id="method_getEventStates">
-        <div class="location">at line 105</div>
+        <div class="location">at line 108</div>
         <code>            public            array
     <strong>getEventStates</strong>()</code>
     </h3>
@@ -294,7 +299,7 @@
     </div>
 
                 <h3 id="method_isEventState">
-        <div class="location">at line 117</div>
+        <div class="location">at line 120</div>
         <code>            public            bool
     <strong>isEventState</strong>($state_or_state_name)</code>
     </h3>
@@ -331,9 +336,9 @@
     </div>
 
                 <h3 id="method_execute">
-        <div class="location">at line 141</div>
+        <div class="location">at line 144</div>
         <code>            public            <a href="../../Workflux/State/StateInterface.html"><abbr title="Workflux\State\StateInterface">StateInterface</abbr></a>
-    <strong>execute</strong>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject, string $event_name)</code>
+    <strong>execute</strong>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject, string $event_name = null)</code>
     </h3>
     <div class="details">
         <p>Executes the state machine against the execution context of the given subject.</p>
@@ -362,7 +367,7 @@
                     <table>
         <tr>
             <td><a href="../../Workflux/State/StateInterface.html"><abbr title="Workflux\State\StateInterface">StateInterface</abbr></a></td>
-            <td>The state at which the execution was suspended.</td>
+            <td>The state at which the execution suspended or finished.</td>
         </tr>
     </table>
 
@@ -372,7 +377,7 @@
     </div>
 
                 <h3 id="method_getStates">
-        <div class="location">at line 164</div>
+        <div class="location">at line 169</div>
         <code>            public            array
     <strong>getStates</strong>()</code>
     </h3>
@@ -397,7 +402,7 @@
     </div>
 
                 <h3 id="method_getState">
-        <div class="location">at line 174</div>
+        <div class="location">at line 179</div>
         <code>            public            <a href="../../Workflux/State/StateInterface.html"><abbr title="Workflux\State\StateInterface">StateInterface</abbr></a>
     <strong>getState</strong>($state_name)</code>
     </h3>
@@ -434,12 +439,12 @@
     </div>
 
                 <h3 id="method_getTransitions">
-        <div class="location">at line 193</div>
+        <div class="location">at line 201</div>
         <code>            public            array
     <strong>getTransitions</strong>(string $state_name = &#039;&#039;, string $event_name = &#039;&#039;)</code>
     </h3>
     <div class="details">
-        <p>Depending on what parameters are set either all transitions are returned or a filtered subset.</p>
+        <p>Depending on what parameters are set either returns all transitions for a given state or just the state transitions for a particular event.</p>
         <p>
 </p>
         <div class="tags">
@@ -464,12 +469,20 @@
                     <table>
         <tr>
             <td>array</td>
-            <td>
-</td>
+            <td>An array of Workflux\Transition\TransitionInterface</td>
         </tr>
     </table>
 
             
+                            <h4>Exceptions</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="Error">Error</abbr></td>
+                <td>if either a given state and/or event are not supported.</td>
+            </tr>
+            </table>
+
             
                     </div>
     </div>
