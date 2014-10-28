@@ -43,7 +43,7 @@ abstract class AbstractVariableAction implements ActionInterface
      *
      * @return string
      */
-    public function getVariableName()
+    protected function getVariableName()
     {
         return $this->variable_name;
     }
@@ -54,7 +54,7 @@ abstract class AbstractVariableAction implements ActionInterface
      *
      * @return mixed
      */
-    public function getValue()
+    protected function getValue()
     {
         return $this->value;
     }
@@ -64,7 +64,7 @@ abstract class AbstractVariableAction implements ActionInterface
      *
      * @return bool
      */
-    public function hasValue()
+    protected function hasValue()
     {
         return $this->value !== null;
     }
