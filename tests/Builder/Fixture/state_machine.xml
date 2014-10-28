@@ -9,6 +9,10 @@
             </entry_actions>
             <exit_actions>
                 <action type="unset"><variable name="foo" /></action>
+                <action type="custom">
+                    <variable name="foo" />
+                    <option name="fnord">number five</option>
+                </action>
             </exit_actions>
             <event name="promote">
                 <transition target="transcoding">

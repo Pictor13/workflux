@@ -8,15 +8,18 @@ use Workflux\StateMachine\EventEmittingStateMachine;
 use Workflux\Builder\XmlStateMachineBuilder;
 use Workflux\Tests\Fixture\GenericSubject;
 use Workflux\Renderer\DotGraphRenderer;
+use Workflux\Tests\Builder\Fixture\CustomAction;
 
 class XmlStateMachineBuilderTest extends BaseTestCase
 {
     public function testBuild()
     {
-        $state_machine_definition_file = __DIR__ . '/Fixture/state_machine.xml';
-
         $builder = new XmlStateMachineBuilder(
-            [ 'state_machine_definition' => $state_machine_definition_file, 'name' => 'video_transcoding' ]
+            [
+                'state_machine_definition' => __DIR__ . '/Fixture/state_machine.xml',
+                'name' => 'video_transcoding',
+                'action_map' => [ 'custom' => CustomAction::CLASS ]
+            ]
         );
 
         $state_machine = $builder->build();
@@ -29,7 +32,11 @@ class XmlStateMachineBuilderTest extends BaseTestCase
     public function testSuccessFlow()
     {
         $builder = new XmlStateMachineBuilder(
-            [ 'state_machine_definition' => __DIR__ . '/Fixture/state_machine.xml', 'name' => 'video_transcoding' ]
+            [
+                'state_machine_definition' => __DIR__ . '/Fixture/state_machine.xml',
+                'name' => 'video_transcoding',
+                'action_map' => [ 'custom' => CustomAction::CLASS ]
+            ]
         );
 
         $state_machine = $builder->build();
@@ -44,7 +51,11 @@ class XmlStateMachineBuilderTest extends BaseTestCase
     public function testErrorFlow()
     {
         $builder = new XmlStateMachineBuilder(
-            [ 'state_machine_definition' => __DIR__ . '/Fixture/state_machine.xml', 'name' => 'video_transcoding' ]
+            [
+                'state_machine_definition' => __DIR__ . '/Fixture/state_machine.xml',
+                'name' => 'video_transcoding',
+                'action_map' => [ 'custom' => CustomAction::CLASS ]
+            ]
         );
 
         $state_machine = $builder->build();

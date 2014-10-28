@@ -14,6 +14,7 @@ use Workflux\Guard\GuardInterface;
 use Workflux\Error\Error;
 use Workflux\StateMachine\StateMachine;
 use Workflux\Parser\Xml\StateMachineDefinitionParser;
+use Params\Immutable\ImmutableOptions;
 
 /**
  * The XmlStateMachineBuilder can build/load a state_machine from a given xml file,
@@ -21,6 +22,9 @@ use Workflux\Parser\Xml\StateMachineDefinitionParser;
  */
 class XmlStateMachineBuilder extends StateMachineBuilder
 {
+    /**
+     * @var array $default_action_map
+     */
     protected static $default_action_map = [
         'set' => SetVariableAction::CLASS,
         'unset' => UnsetVariableAction::CLASS,
@@ -28,6 +32,26 @@ class XmlStateMachineBuilder extends StateMachineBuilder
         'decrement' => DecrementVariableAction::CLASS,
         'append' => AppendVariableAction::CLASS
     ];
+
+    /**
+     * @var array $action_map
+     */
+    protected $action_map;
+
+    /**
+     * Creates a new XmlStateMachineBuilder state machine instance.
+     *
+     * @param array $options
+     */
+    public function __construct(array $options)
+    {
+        parent::__construct($options);
+
+        $this->action_map = array_merge(
+            self::$default_action_map,
+            $this->getOption('action_map', new ImmutableOptions)->toArray()
+        );
+    }
 
     /**
      * Verifies the builder's current state and builds a state machine off of it.
@@ -158,7 +182,7 @@ class XmlStateMachineBuilder extends StateMachineBuilder
     protected function resolveActionClass(array $action)
     {
         $action_type_id = $this->validateActionType($action);
-        $action_class = self::$default_action_map[$action_type_id];
+        $action_class = $this->action_map[$action_type_id];
 
         if (!class_exists($action_class)) {
             throw new Error(sprintf('The given operation class "%s" could not be loaded.', $action_class));
@@ -182,12 +206,12 @@ class XmlStateMachineBuilder extends StateMachineBuilder
             throw new Error('Missing "type" information for the given action. Maybe missing within the config?');
         }
 
-        if (!isset(self::$default_action_map[$action['type']])) {
+        if (!isset($this->action_map[$action['type']])) {
             throw new Error(
                 sprintf(
                     'The given action type: "%s" is not supported. Supported are: %s',
                     $action['type'],
-                    implode(', ', array_keys(self::$default_action_map))
+                    implode(', ', array_keys($this->action_map))
                 )
             );
         }
