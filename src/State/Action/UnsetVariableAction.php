@@ -1,18 +1,18 @@
 <?php
 
-namespace Workflux\State;
+namespace Workflux\State\Action;
 
 use Workflux\ExecutionContextInterface;
 
 /**
- * Allows to set the value of an execution-variable.
+ * Allows to unset the value of an execution-variable.
  */
-class SetVariableOperation extends AbstractVariableOperation
+class UnsetVariableAction extends AbstractVariableAction
 {
     /**
      * @var string TYPE_ID
      */
-    const TYPE_ID = 'set';
+    const TYPE_ID = 'unset';
 
     /**
      * Returns a string that uniquely identifies the operation in the context of variable-operations.
@@ -25,12 +25,12 @@ class SetVariableOperation extends AbstractVariableOperation
     }
 
     /**
-     * Sets the operation's value as the value of the corresponding execution-context variable.
+     * Unsets the corresponding execution-context variable.
      *
      * @var ExecutionContextInterface $execution_context
      */
     public function apply(ExecutionContextInterface $execution_context)
     {
-        $execution_context->setParameter($this->getVariableName(), $this->getValue());
+        $execution_context->removeParameter($this->getVariableName());
     }
 }

@@ -12,7 +12,7 @@ Fixed bug #30 and increased code coverage.
 * [chg] #32 Increased code coverage
 * [fix] #30 Sequential initial state doesn't run
 
-## 0.5.0 (2014/10/22)
+## 1.0.0 (2014/10/22)
 
 Added an event emitting implementation of the state machine.
 Thanks to @MrHash who provided the feedback, that this release is based on.

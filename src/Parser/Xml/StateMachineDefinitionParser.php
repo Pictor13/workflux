@@ -101,12 +101,82 @@ class StateMachineDefinitionParser extends AbstractXmlParser
             'name' => $state_node->getAttribute('name'),
             'type' => $this->parseStateType($state_node),
             'class' => $state_class,
+            'entry_actions' => $this->parseEntryActions($state_node),
+            'exit_actions' => $this->parseExitActions($state_node),
             'options' => $this->options_parser->parse($state_node),
             'events' => array_merge(
                 $this->parseStateNodeEventOuts($state_node),
                 $this->parseStateNodeSequentialOuts($state_node)
             )
         ];
+    }
+
+    /**
+     * Parses the given state-nodes entry-actions into an array representation.
+     *
+     * @param DOMElement $state_node
+     *
+     * @return array
+     */
+    protected function parseEntryActions(DOMElement $state_node)
+    {
+        $entry_actions = [];
+        $entry_actions_element = $this->xpath->query('entry_actions', $state_node)->item(0);
+
+        if ($entry_actions_element) {
+            $entry_actions = $this->parseActions($entry_actions_element);
+        }
+
+        return $entry_actions;
+    }
+
+    /**
+     * Parses the given state-nodes entry-actions into an array representation.
+     *
+     * @param DOMElement $state_node
+     *
+     * @return array
+     */
+    protected function parseExitActions(DOMElement $state_node)
+    {
+        $exit_actions = [];
+        $exit_actions_element = $this->xpath->query('exit_actions', $state_node)->item(0);
+
+        if ($exit_actions_element) {
+            $exit_actions = $this->parseActions($exit_actions_element);
+        }
+
+        return $exit_actions;
+    }
+
+    /**
+     * Parses any nested 'action' nodes of the given actions-parent into an array.
+     *
+     * @param DOMElement $actions_parent
+     *
+     * @return array
+     */
+    protected function parseActions(DOMElement $actions_parent)
+    {
+        $actions = [];
+        foreach ($this->xpath->query('action', $actions_parent) as $action_element) {
+            $action_variable = null;
+            $variable_element = $this->xpath->query('variable', $action_element)->item(0);
+            if ($variable_element) {
+                $action_variable = [
+                    'name' => OptionsXpathParser::literalize($variable_element->getAttribute('name')),
+                    'value' => OptionsXpathParser::literalize($variable_element->nodeValue)
+                ];
+            }
+
+            $actions[] = [
+                'type' => $action_element->getAttribute('type'),
+                'variable' => $action_variable,
+                'options' => $this->options_parser->parse($action_element)
+            ];
+        }
+
+        return $actions;
     }
 
     /**

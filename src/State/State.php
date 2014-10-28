@@ -15,32 +15,6 @@ class State implements StateInterface
     use ImmutableOptionsTrait;
 
     /**
-     * @var string OPTION_OPERATION_MAP
-     */
-    const OPTION_OPERATION_MAP = 'operation_map';
-
-    /**
-     * @var string OPTION_ENTRY_VARS
-     */
-    const OPTION_ENTRY_VARS = 'entry_vars';
-
-    /**
-     * @var string OPTION_EXIT_VARS
-     */
-    const OPTION_EXIT_VARS = 'exit_vars';
-
-    /**
-     * @var array $default_operation_map
-     */
-    protected static $default_operation_map = [
-        'set' => SetVariableOperation::CLASS,
-        'unset' => UnsetVariableOperation::CLASS,
-        'increment' => IncrementVariableOperation::CLASS,
-        'decrement' => DecrementVariableOperation::CLASS,
-        'append' => AppendVariableOperation::CLASS
-    ];
-
-    /**
      * @var string $name
      */
     protected $name;
@@ -56,31 +30,38 @@ class State implements StateInterface
     protected $operation_map;
 
     /**
-     * @var array $entry_operations
+     * @var array $entry_actions
      */
-    protected $entry_operations;
+    protected $entry_actions;
 
     /**
-     * @var array $exit_operations
+     * @var array $exit_actions
      */
-    protected $exit_operations;
+    protected $exit_actions;
 
     /**
      * Creates a new State instance.
      *
      * @param string $name
      * @param string $type
+     * @param array $entry_actions
+     * @param array $exit_actions
      * @param array $options
      */
-    public function __construct($name, $type = self::TYPE_ACTIVE, array $options = [])
-    {
+    public function __construct(
+        $name,
+        $type = self::TYPE_ACTIVE,
+        array $entry_actions = [],
+        array $exit_actions = [],
+        array $options = []
+    ) {
         $this->assertType($type);
 
         $this->name = $name;
         $this->type = $type;
-
+        $this->entry_actions = $entry_actions;
+        $this->exit_actions = $exit_actions;
         $this->options = new ImmutableOptions($options);
-        $this->hydrateVariableOptions();
     }
 
     /**
@@ -143,7 +124,9 @@ class State implements StateInterface
     {
         $subject->getExecutionContext()->onStateEntry($this);
 
-        $this->interpolateVariables($subject, $this->entry_operations);
+        foreach ($this->entry_actions as $entry_action) {
+            $entry_action->apply($subject->getExecutionContext());
+        }
     }
 
     /**
@@ -156,7 +139,9 @@ class State implements StateInterface
     {
         $subject->getExecutionContext()->onStateExit($this);
 
-        $this->interpolateVariables($subject, $this->exit_operations);
+        foreach ($this->exit_actions as $exit_action) {
+            $exit_action->apply($subject->getExecutionContext());
+        }
     }
 
     /**
@@ -179,111 +164,6 @@ class State implements StateInterface
                     implode(', ', $allowed_types)
                 )
             );
-        }
-    }
-
-    /**
-     * Initializes the members, that are required for applying entry- and exit-variable-operations.
-     */
-    protected function hydrateVariableOptions()
-    {
-        $this->operation_map = array_merge(
-            self::$default_operation_map,
-            $this->getOption(self::OPTION_OPERATION_MAP, new ImmutableOptions)->toArray()
-        );
-
-        $this->entry_operations = $this->buildVariableOperationMap(
-            $this->getOption(self::OPTION_ENTRY_VARS, new ImmutableOptions)
-        );
-
-        $this->exit_operations = $this->buildVariableOperationMap(
-            $this->getOption(self::OPTION_EXIT_VARS, new ImmutableOptions)
-        );
-    }
-
-    /**
-     * Builds a list of VariableOperationInterface implementations off of the given options.
-     *
-     * @param ImmutableOptions $variable_opts
-     *
-     * @return array
-     */
-    protected function buildVariableOperationMap(ImmutableOptions $variable_ops)
-    {
-        $variable_operations = [];
-
-        foreach ($variable_ops->toArray() as $var_name => $operation) {
-            $operation_class = $this->resolveOperationClass($operation);
-            $variable_operations[] = new $operation_class(
-                $var_name,
-                isset($operation['value']) ? $operation['value'] : null
-            );
-        }
-
-        return $variable_operations;
-    }
-
-    /**
-     * Resolves an VariableOperationInterface implementor based on the given operation data.
-     *
-     * @param array $operation
-     *
-     * @return string Class name of a concrete VariableOperationInterface implementation.
-     *
-     * @throws Error If the operation type/class information is invalid.
-     */
-    protected function resolveOperationClass(array $operation)
-    {
-        $operation_type_id = $this->validateOperationType($operation);
-        $operation_class = $this->operation_map[$operation_type_id];
-
-        if (!class_exists($operation_class)) {
-            throw new Error(sprintf('The given operation class "%s" could not be loaded.', $operation_class));
-        }
-
-        return $operation_class;
-    }
-
-    /**
-     * Validates the type key of the given operation meta-data array.
-     *
-     * @param array $operation
-     *
-     * @return string Type id corresponding to the given operation
-     *
-     * @throws Error If the type is not registered within the operation-map or is completely missing.
-     */
-    protected function validateOperationType(array $operation)
-    {
-        if (!isset($operation['type'])) {
-            throw new Error('Missing "type" information for the given operation. Maybe missing within the config?');
-        }
-
-        if (!isset($this->operation_map[$operation['type']])) {
-            throw new Error(
-                sprintf(
-                    'The given operation type: "%s" is not supported. Supported are: %s',
-                    $operation['type'],
-                    implode(', ', array_keys($this->operation_map))
-                )
-            );
-        }
-
-        return $operation['type'];
-    }
-
-    /**
-     * Runs the given list of variable operations on the given subject's execution-context.
-     *
-     * @param StatefulSubjectInterface $subject
-     * @param ImmutableOptions $variable_opts
-     */
-    protected function interpolateVariables(StatefulSubjectInterface $subject, array $variable_ops)
-    {
-        $execution_ctx = $subject->getExecutionContext();
-
-        foreach ($variable_ops as $variable_operation) {
-            $variable_operation->apply($execution_ctx);
         }
     }
 }

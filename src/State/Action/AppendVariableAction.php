@@ -1,6 +1,6 @@
 <?php
 
-namespace Workflux\State;
+namespace Workflux\State\Action;
 
 use Workflux\ExecutionContextInterface;
 use Workflux\Error\Error;
@@ -9,7 +9,7 @@ use Params\Parameters;
 /**
  * Allows to append a value to either a string- or array-type execution-variable.
  */
-class AppendVariableOperation extends AbstractVariableOperation
+class AppendVariableAction extends AbstractVariableAction
 {
     /**
      * @var string TYPE_ID

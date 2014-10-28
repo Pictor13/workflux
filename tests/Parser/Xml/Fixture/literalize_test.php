@@ -8,6 +8,8 @@ return [
                 'name' => 'new',
                 'type' => 'initial',
                 'class' => null,
+                'entry_actions' => [],
+                'exit_actions' => [],
                 'options' => [],
                 'events' => [
                     'promote' => [
@@ -35,6 +37,8 @@ return [
                 'name' => 'ready',
                 'type' => 'final',
                 'class' => null,
+                'entry_actions' => [],
+                'exit_actions' => [],
                 'options' => [],
                 'events' => [
                     '_sequential' => []

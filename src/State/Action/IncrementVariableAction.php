@@ -1,18 +1,18 @@
 <?php
 
-namespace Workflux\State;
+namespace Workflux\State\Action;
 
 use Workflux\ExecutionContextInterface;
 
 /**
- * Allows to decrement the value of an integer typed execution-variable.
+ * Allows to increment the value of an integer typed execution-variable.
  */
-class DecrementVariableOperation extends AbstractVariableOperation
+class IncrementVariableAction extends AbstractVariableAction
 {
     /**
      * @var string TYPE_ID
      */
-    const TYPE_ID = 'decrement';
+    const TYPE_ID = 'increment';
 
     /**
      * Returns a string that uniquely identifies the operation in the context of variable-operations.
@@ -25,13 +25,13 @@ class DecrementVariableOperation extends AbstractVariableOperation
     }
 
     /**
-     * Decrements the value of the corresponding execution-context variable.
+     * Increments the value of the corresponding execution-context variable.
      *
      * @var ExecutionContextInterface $execution_context
      */
     public function apply(ExecutionContextInterface $execution_context)
     {
         $current_value = $this->getVarAsIntOrFail($execution_context);
-        $execution_context->setParameter($this->getVariableName(), --$current_value);
+        $execution_context->setParameter($this->getVariableName(), ++$current_value);
     }
 }

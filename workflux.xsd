@@ -4,8 +4,8 @@
     elementFormDefault="qualified"
     attributeFormDefault="unqualified"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns="urn:schemas-workflux:statemachine:0.5.0"
-    targetNamespace="urn:schemas-workflux:statemachine:0.5.0"
+    xmlns="urn:schemas-workflux:statemachine:1.0.0"
+    targetNamespace="urn:schemas-workflux:statemachine:1.0.0"
 >
     <xs:element name="state_machines" type="StateMachinesListType" />
 
@@ -22,11 +22,13 @@
             <xs:element name="final" type="StateType" minOccurs="1" maxOccurs="unbounded" />
         </xs:sequence>
         <xs:attribute name="name" type="xs:string" use="required" />
-        <xs:attribute name="class" type="xs:string" use="optional" />
+        <xs:attribute name="class" type="PhpClassType" use="optional" />
     </xs:complexType>
 
     <xs:complexType name="StateType">
         <xs:sequence>
+            <xs:element name="entry_actions" type="ActionListType" minOccurs="0" maxOccurs="1" />
+            <xs:element name="exit_actions" type="ActionListType" minOccurs="0" maxOccurs="1" />
             <xs:choice>
                 <xs:element name="event" type="EventType" minOccurs="0" maxOccurs="unbounded" />
                 <xs:element name="transition" type="TransitionType" minOccurs="0" maxOccurs="unbounded" />
@@ -34,7 +36,29 @@
             <xs:element name="option" type="OptionType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
         <xs:attribute name="name" type="xs:string" use="required" />
-        <xs:attribute name="class" type="xs:string" use="optional" />
+        <xs:attribute name="class" type="PhpClassType" use="optional" />
+    </xs:complexType>
+
+    <xs:complexType name="ActionListType">
+        <xs:sequence>
+            <xs:element name="action" type="ActionType" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ActionType">
+        <xs:sequence>
+            <xs:element name="variable" type="VariableType" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="option" type="OptionType" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+        <xs:attribute name="type" type="xs:string" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="VariableType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:extension>
+        </xs:simpleContent>
     </xs:complexType>
 
     <xs:complexType name="EventType">
@@ -55,7 +79,7 @@
         <xs:sequence>
             <xs:element name="option" type="OptionType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
-        <xs:attribute name="class" type="xs:string" use="required" />
+        <xs:attribute name="class" type="PhpClassType" use="required" />
     </xs:complexType>
 
     <xs:complexType name="OptionType" mixed="true">
@@ -64,4 +88,10 @@
         </xs:sequence>
         <xs:attribute name="name" type="xs:string" use="optional" />
     </xs:complexType>
+
+    <xs:simpleType name="PhpClassType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[^&#9;-&#64;\&#91;\&#92;\&#93;&#94;&#96;&#123;&#124;&#125;&#126;][^&#9;-&#47;&#58;-&#64;\&#91;\&#93;&#94;&#96;&#123;&#124;&#125;&#126;]*" />
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema>

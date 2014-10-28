@@ -3,9 +3,9 @@
 namespace Workflux\Tests\State\Fixture;
 
 use Workflux\ExecutionContextInterface;
-use Workflux\State\AbstractVariableOperation;
+use Workflux\State\Action\AbstractVariableAction;
 
-class CustomVariableOperation extends AbstractVariableOperation
+class CustomVariableAction extends AbstractVariableAction
 {
     public function getTypeId()
     {

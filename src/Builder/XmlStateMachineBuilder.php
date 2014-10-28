@@ -4,6 +4,11 @@ namespace Workflux\Builder;
 
 use Workflux\Transition\Transition;
 use Workflux\State\State;
+use Workflux\State\Action\SetVariableAction;
+use Workflux\State\Action\UnsetVariableAction;
+use Workflux\State\Action\IncrementVariableAction;
+use Workflux\State\Action\DecrementVariableAction;
+use Workflux\State\Action\AppendVariableAction;
 use Workflux\State\StateInterface;
 use Workflux\Guard\GuardInterface;
 use Workflux\Error\Error;
@@ -16,6 +21,14 @@ use Workflux\Parser\Xml\StateMachineDefinitionParser;
  */
 class XmlStateMachineBuilder extends StateMachineBuilder
 {
+    protected static $default_action_map = [
+        'set' => SetVariableAction::CLASS,
+        'unset' => UnsetVariableAction::CLASS,
+        'increment' => IncrementVariableAction::CLASS,
+        'decrement' => DecrementVariableAction::CLASS,
+        'append' => AppendVariableAction::CLASS
+    ];
+
     /**
      * Verifies the builder's current state and builds a state machine off of it.
      *
@@ -89,9 +102,14 @@ class XmlStateMachineBuilder extends StateMachineBuilder
         $state_implementor = isset($state_definition['class']) ? $state_definition['class'] : State::CLASS;
         $this->loadStateImplementor($state_implementor);
 
+        $entry_actions = [];
+        $exit_actions = [];
+
         $state = new $state_implementor(
             $state_definition['name'],
             $state_definition['type'],
+            $this->createTransitionActions($state_definition['entry_actions']),
+            $this->createTransitionActions($state_definition['exit_actions']),
             $state_definition['options']
         );
 
@@ -106,6 +124,75 @@ class XmlStateMachineBuilder extends StateMachineBuilder
         }
 
         return $state;
+    }
+
+    /**
+     * Creates an array of ActionInterface implementations based on the given action-data.
+     *
+     * @param array $actions_data
+     *
+     * @return array
+     */
+    protected function createTransitionActions(array $actions_data)
+    {
+        $actions = [];
+
+        foreach ($actions_data as $action) {
+            $action_class = $this->resolveActionClass($action);
+            $variable = $action['variable'];
+            $actions[] = new $action_class($variable['name'], $variable['value'], $action['options']);
+        }
+
+        return $actions;
+    }
+
+    /**
+     * Resolves an ActionInterface implementor based on the given operation data.
+     *
+     * @param array $operation
+     *
+     * @return string Class name of a concrete ActionInterface implementation.
+     *
+     * @throws Error If the action type/class information is invalid.
+     */
+    protected function resolveActionClass(array $action)
+    {
+        $action_type_id = $this->validateActionType($action);
+        $action_class = self::$default_action_map[$action_type_id];
+
+        if (!class_exists($action_class)) {
+            throw new Error(sprintf('The given operation class "%s" could not be loaded.', $action_class));
+        }
+
+        return $action_class;
+    }
+
+    /**
+     * Validates the type key of the given action meta-data array.
+     *
+     * @param array $action
+     *
+     * @return string Type id corresponding to the given action
+     *
+     * @throws Error If the type is not registered within the action-map or is completely missing.
+     */
+    protected function validateActionType(array $action)
+    {
+        if (!isset($action['type'])) {
+            throw new Error('Missing "type" information for the given action. Maybe missing within the config?');
+        }
+
+        if (!isset(self::$default_action_map[$action['type']])) {
+            throw new Error(
+                sprintf(
+                    'The given action type: "%s" is not supported. Supported are: %s',
+                    $action['type'],
+                    implode(', ', array_keys(self::$default_action_map))
+                )
+            );
+        }
+
+        return $action['type'];
     }
 
     /**

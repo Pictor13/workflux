@@ -1,17 +1,17 @@
 <?php
 
-namespace Workflux\Tests\State;
+namespace Workflux\Tests\State\Action;
 
 use Workflux\ExecutionContext;
 use Workflux\Tests\BaseTestCase;
-use Workflux\State\UnsetVariableOperation;
+use Workflux\State\Action\UnsetVariableAction;
 
-class UnsetVariableOperationTest extends BaseTestCase
+class UnsetVariableActionTest extends BaseTestCase
 {
     public function testAppendToArray()
     {
         $execution_ctx = new ExecutionContext('test_fsm', null, [ 'foo' => 'bar' ]);
-        $operation = new UnsetVariableOperation('foo');
+        $operation = new UnsetVariableAction('foo');
 
         $operation->apply($execution_ctx);
 

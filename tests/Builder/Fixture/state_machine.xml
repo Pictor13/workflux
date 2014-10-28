@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-
-<state_machines xmlns="urn:schemas-workflux:statemachine:0.5.0">
+<state_machines xmlns="urn:schemas-workflux:statemachine:1.0.0">
     <state_machine name="video_transcoding" class="Workflux\StateMachine\EventEmittingStateMachine">
 
         <initial name="new">
+            <entry_actions>
+                <action type="set"><variable name="foo">42</variable></action>
+                <action type="increment"><variable name="foo" /></action>
+            </entry_actions>
+            <exit_actions>
+                <action type="unset"><variable name="foo" /></action>
+            </exit_actions>
             <event name="promote">
                 <transition target="transcoding">
                     <guard class="Workflux\Guard\ExpressionGuard">

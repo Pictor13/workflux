@@ -1,16 +1,16 @@
 <?php
 
-namespace Workflux\Tests\State;
+namespace Workflux\Tests\State\Action;
 
 use Workflux\ExecutionContext;
 use Workflux\Tests\BaseTestCase;
-use Workflux\State\AppendVariableOperation;
+use Workflux\State\Action\AppendVariableAction;
 
-class AppendVariableOperationTest extends BaseTestCase
+class AppendVariableActionTest extends BaseTestCase
 {
     public function testAppendToArray()
     {
-        $operation = new AppendVariableOperation('foo', 2);
+        $operation = new AppendVariableAction('foo', 2);
         $execution_ctx = new ExecutionContext('test_fsm', null, [ 'foo' => [ 4 ] ]);
 
         $operation->apply($execution_ctx);
@@ -20,7 +20,7 @@ class AppendVariableOperationTest extends BaseTestCase
 
     public function testAppendToString()
     {
-        $operation = new AppendVariableOperation('foo', 'bar');
+        $operation = new AppendVariableAction('foo', 'bar');
         $execution_ctx = new ExecutionContext('test_fsm', null, [ 'foo' => 'foo' ]);
 
         $operation->apply($execution_ctx);

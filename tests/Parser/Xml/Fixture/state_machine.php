@@ -8,6 +8,25 @@ return [
             'new' => [
                 'name' => 'new',
                 'type' => 'initial',
+                'entry_actions' => [
+                    [
+                        'type' => 'set',
+                        'variable' => [ 'name' => 'foo', 'value' => 42 ],
+                        'options' => []
+                    ],
+                    [
+                        'type' => 'increment',
+                        'variable' => [ 'name' => 'foo', 'value' => null ],
+                        'options' => []
+                    ]
+                ],
+                'exit_actions' => [
+                    [
+                        'type' => 'unset',
+                        'variable' => [ 'name' => 'foo', 'value' => null ],
+                        'options' => []
+                    ]
+                ],
                 'class' => null,
                 'options' => [],
                 'events' => [
@@ -49,6 +68,8 @@ return [
                 'name' => 'transcoding',
                 'type' => 'active',
                 'class' => 'Workflux\Tests\Parser\Xml\Fixture\CustomState',
+                'entry_actions' => [],
+                'exit_actions' => [],
                 'options' => [],
                 'events' => [
                     '_sequential' => [
@@ -86,6 +107,8 @@ return [
                 'name' => 'error',
                 'type' => 'active',
                 'class' => null,
+                'entry_actions' => [],
+                'exit_actions' => [],
                 'options' => [],
                 'events' => [
                     'promote' => [
@@ -113,6 +136,8 @@ return [
                 'name' => 'rejected',
                 'type' => 'final',
                 'class' => null,
+                'entry_actions' => [],
+                'exit_actions' => [],
                 'options' => [ 'notify_owner' => true ],
                 'events' => [
                     '_sequential' => []
@@ -122,6 +147,8 @@ return [
                 'name' => 'ready',
                 'type' => 'final',
                 'class' => null,
+                'entry_actions' => [],
+                'exit_actions' => [],
                 'options' => [],
                 'events' => [
                     '_sequential' => []

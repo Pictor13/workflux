@@ -1,16 +1,20 @@
 <?php
 
-namespace Workflux\State;
+namespace Workflux\State\Action;
 
 use Workflux\Error\Error;
 use Workflux\ExecutionContextInterface;
+use Params\Immutable\ImmutableOptionsTrait;
+use Params\Immutable\ImmutableOptions;
 
 /**
  * Boilerplate implementation that can be extended when writing new VariableOperationInterface implementations.
  * Takes care of "everything"™ but the VariableOperationInterface.apply method.
  */
-abstract class AbstractVariableOperation implements VariableOperationInterface
+abstract class AbstractVariableAction implements ActionInterface
 {
+    use ImmutableOptionsTrait;
+
     /**
      * @var string $variable_name
      */
@@ -27,10 +31,11 @@ abstract class AbstractVariableOperation implements VariableOperationInterface
      * @param string $variable_name
      * @param mixed $value
      */
-    public function __construct($variable_name, $value = null)
+    public function __construct($variable_name, $value = null, array $options = [])
     {
         $this->variable_name = $variable_name;
         $this->value = $value;
+        $this->options = new ImmutableOptions($options);
     }
 
     /**
