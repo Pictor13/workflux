@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="index, follow, all" />
+        <title>Workflux\StateMachine\StateMachineInterface | Workflux API</title>
+                    <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+                            </head>
+        <body id="class">
+            <div class="header">
+        <ul>
+            <li><a href="../../classes.html">Classes</a></li>
+                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                        <li><a href="../../interfaces.html">Interfaces</a></li>
+            <li><a href="../../traits.html">Traits</a></li>
+            <li><a href="../../doc-index.html">Index</a></li>
+            
+        </ul>
+
+        <div id="title">Workflux API</div>
+
+            <div class="type">Interface</div>
+    <h1><a href="../../Workflux/StateMachine.html">Workflux\StateMachine</a>\StateMachineInterface</h1>
+    </div>
+        <div class="content">
+                <p>    interface
+    <strong>StateMachineInterface</strong></p>
+
+            <div class="description">
+            <p>StateMachineInterface implementations are expected to act as event triggered finite state machines.</p>
+            <p>More api doc tbd...</p>
+        </div>
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table>
+                    <tr>
+                <td class="type">
+                    string
+                </td>
+                <td class="last">
+                    <a href="#method_getName">getName</a>()
+                    <p>Returns the state machine's name.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="../../Workflux/State/StateInterface.html"><abbr title="Workflux\State\StateInterface">StateInterface</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_execute">execute</a>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject, string $event_name = null)
+                    <p>Executes the state machine against the execution context of the given subject.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="../../Workflux/State/StateInterface.html"><abbr title="Workflux\State\StateInterface">StateInterface</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_getInitialState">getInitialState</a>()
+                    <p>Returns the state machine's initial state.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    array
+                </td>
+                <td class="last">
+                    <a href="#method_getFinalStates">getFinalStates</a>()
+                    <p>Returns the state machine's final states.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    array
+                </td>
+                <td class="last">
+                    <a href="#method_getEventStates">getEventStates</a>()
+                    <p>Returns the state machine's event states, hence states that have their transitions connected through events, rather than sequentially.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    array
+                </td>
+                <td class="last">
+                    <a href="#method_getStates">getStates</a>()
+                    <p>Returns all of the state machine's states.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="../../Workflux/State/StateInterface.html"><abbr title="Workflux\State\StateInterface">StateInterface</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_getState">getState</a>($state_name)
+                    <p>Retrieves a state from the state machine by name.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    bool
+                </td>
+                <td class="last">
+                    <a href="#method_isEventState">isEventState</a>(mixed $state_name)
+                    <p>Tells whether a given state has event based or sequential transitions.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    array
+                </td>
+                <td class="last">
+                    <a href="#method_getTransitions">getTransitions</a>(string $state_name = &#039;&#039;, string $event_name = &#039;&#039;)
+                    <p>Depending on what parameters are set either all transitions are returned or a filtered subset.</p>
+                </td>
+                <td></td>
+            </tr>
+            </table>
+
+
+        <h2>Details</h2>
+
+                        <h3 id="method_getName">
+        <div class="location">at line 19</div>
+        <code>            public            string
+    <strong>getName</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Returns the state machine's name.</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_execute">
+        <div class="location">at line 30</div>
+        <code>            public            <a href="../../Workflux/State/StateInterface.html"><abbr title="Workflux\State\StateInterface">StateInterface</abbr></a>
+    <strong>execute</strong>(<a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a> $subject, string $event_name = null)</code>
+    </h3>
+    <div class="details">
+        <p>Executes the state machine against the execution context of the given subject.</p>
+        <p>The state machine will traverse the graph until it reaches an event- or final-state.</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="../../Workflux/StatefulSubjectInterface.html"><abbr title="Workflux\StatefulSubjectInterface">StatefulSubjectInterface</abbr></a></td>
+                <td>$subject</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$event_name</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="../../Workflux/State/StateInterface.html"><abbr title="Workflux\State\StateInterface">StateInterface</abbr></a></td>
+            <td>The state at which the execution was suspended.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getInitialState">
+        <div class="location">at line 37</div>
+        <code>            public            <a href="../../Workflux/State/StateInterface.html"><abbr title="Workflux\State\StateInterface">StateInterface</abbr></a>
+    <strong>getInitialState</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Returns the state machine's initial state.</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="../../Workflux/State/StateInterface.html"><abbr title="Workflux\State\StateInterface">StateInterface</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getFinalStates">
+        <div class="location">at line 44</div>
+        <code>            public            array
+    <strong>getFinalStates</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Returns the state machine's final states.</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array</td>
+            <td>A list of StateInterface instances.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getEventStates">
+        <div class="location">at line 52</div>
+        <code>            public            array
+    <strong>getEventStates</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Returns the state machine's event states, hence states that have their transitions connected through events, rather than sequentially.</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array</td>
+            <td>A list of StateInterface instances.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getStates">
+        <div class="location">at line 59</div>
+        <code>            public            array
+    <strong>getStates</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Returns all of the state machine's states.</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array</td>
+            <td>A list of StateInterface instances.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getState">
+        <div class="location">at line 66</div>
+        <code>            public            <a href="../../Workflux/State/StateInterface.html"><abbr title="Workflux\State\StateInterface">StateInterface</abbr></a>
+    <strong>getState</strong>($state_name)</code>
+    </h3>
+    <div class="details">
+        <p>Retrieves a state from the state machine by name.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td></td>
+                <td>$state_name</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="../../Workflux/State/StateInterface.html"><abbr title="Workflux\State\StateInterface">StateInterface</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_isEventState">
+        <div class="location">at line 75</div>
+        <code>            public            bool
+    <strong>isEventState</strong>(mixed $state_name)</code>
+    </h3>
+    <div class="details">
+        <p>Tells whether a given state has event based or sequential transitions.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>mixed</td>
+                <td>$state_name</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>bool</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getTransitions">
+        <div class="location">at line 85</div>
+        <code>            public            array
+    <strong>getTransitions</strong>(string $state_name = &#039;&#039;, string $event_name = &#039;&#039;)</code>
+    </h3>
+    <div class="details">
+        <p>Depending on what parameters are set either all transitions are returned or a filtered subset.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$state_name</td>
+                <td>Only return transitions for the given state.</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$event_name</td>
+                <td>Only return the state-transitions for the given event.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+    
+            </div>
+            <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/" target="_top">Sami, the API Documentation Generator</a>.
+    </div>
+    </body>
+</html>

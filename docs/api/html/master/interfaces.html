@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="index, follow, all" />
+        <title>Interfaces | Workflux API</title>
+                    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+                            </head>
+        <body id="overview">
+            <div class="header">
+        <ul>
+            <li><a href="classes.html">Classes</a></li>
+                            <li><a href="namespaces.html">Namespaces</a></li>
+                        <li><a href="interfaces.html">Interfaces</a></li>
+            <li><a href="traits.html">Traits</a></li>
+            <li><a href="doc-index.html">Index</a></li>
+            
+        </ul>
+
+        <div id="title">Workflux API</div>
+
+            <h1>Interfaces</h1>
+    </div>
+        <div class="content">
+                <table>
+                    <tr>
+                <td><a href="Workflux/Builder/StateMachineBuilderInterface.html" target="main"><abbr title="Workflux\Builder\StateMachineBuilderInterface">Workflux\Builder\StateMachineBuilderInterface</abbr></a></td>
+                <td class="last">
+                    StateMachineBuilderInterface implementations are supposed to provide convenience for building state machines.
+                </td>
+            </tr>
+                    <tr>
+                <td><a href="Workflux/Builder/VerificationInterface.html" target="main"><abbr title="Workflux\Builder\VerificationInterface">Workflux\Builder\VerificationInterface</abbr></a></td>
+                <td class="last">
+                    VerificationInterface implementations are supposed to execute a specific verfication strategy in the context of assuring state machine validity.
+                </td>
+            </tr>
+                    <tr>
+                <td><a href="Workflux/ExecutionContextInterface.html" target="main"><abbr title="Workflux\ExecutionContextInterface">Workflux\ExecutionContextInterface</abbr></a></td>
+                <td class="last">
+                    ExecutionContextInterface reflects the current state of execution of a subject inside a state machine.
+                </td>
+            </tr>
+                    <tr>
+                <td><a href="Workflux/Guard/GuardInterface.html" target="main"><abbr title="Workflux\Guard\GuardInterface">Workflux\Guard\GuardInterface</abbr></a></td>
+                <td class="last">
+                    GuardInterface implementations are supposed to check, if a given subject is acceptable in the context of transitioning from one state to another.
+                </td>
+            </tr>
+                    <tr>
+                <td><a href="Workflux/Parser/ParserInterface.html" target="main"><abbr title="Workflux\Parser\ParserInterface">Workflux\Parser\ParserInterface</abbr></a></td>
+                <td class="last">
+                    ParserInterface implementations are supposed to parse specific payload and turn it into a common array structure, that is expected by the StateMachineBuilderInterface.
+                </td>
+            </tr>
+                    <tr>
+                <td><a href="Workflux/Renderer/GraphRendererInterface.html" target="main"><abbr title="Workflux\Renderer\GraphRendererInterface">Workflux\Renderer\GraphRendererInterface</abbr></a></td>
+                <td class="last">
+                    GraphRendererInterface implementations are expected to render StateMachineInterface instances into any kind of specific output format, like for example xml, yaml or dot.
+                </td>
+            </tr>
+                    <tr>
+                <td><a href="Workflux/StateMachine/StateMachineInterface.html" target="main"><abbr title="Workflux\StateMachine\StateMachineInterface">Workflux\StateMachine\StateMachineInterface</abbr></a></td>
+                <td class="last">
+                    StateMachineInterface implementations are expected to act as event triggered finite state machines.
+                </td>
+            </tr>
+                    <tr>
+                <td><a href="Workflux/State/StateInterface.html" target="main"><abbr title="Workflux\State\StateInterface">Workflux\State\StateInterface</abbr></a></td>
+                <td class="last">
+                    StateInterface implementations are expected to act as a nodes that are part of a state graph.
+                </td>
+            </tr>
+                    <tr>
+                <td><a href="Workflux/StatefulSubjectInterface.html" target="main"><abbr title="Workflux\StatefulSubjectInterface">Workflux\StatefulSubjectInterface</abbr></a></td>
+                <td class="last">
+                    StatefulSubjectInterface provides the main contract between any external objects and the workflux statemachine.
+                </td>
+            </tr>
+                    <tr>
+                <td><a href="Workflux/Transition/TransitionInterface.html" target="main"><abbr title="Workflux\Transition\TransitionInterface">Workflux\Transition\TransitionInterface</abbr></a></td>
+                <td class="last">
+                    TransitionInterface implementations model the connections between states.
+                </td>
+            </tr>
+            </table>
+        </div>
+            <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/" target="_top">Sami, the API Documentation Generator</a>.
+    </div>
+    </body>
+</html>

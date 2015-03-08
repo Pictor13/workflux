@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="index, follow, all" />
+        <title>Classes | Workflux API</title>
+                    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+                            </head>
+        <body id="overview">
+            <div class="header">
+        <ul>
+            <li><a href="classes.html">Classes</a></li>
+                            <li><a href="namespaces.html">Namespaces</a></li>
+                        <li><a href="interfaces.html">Interfaces</a></li>
+            <li><a href="traits.html">Traits</a></li>
+            <li><a href="doc-index.html">Index</a></li>
+            
+        </ul>
+
+        <div id="title">Workflux API</div>
+
+            <h1>Classes</h1>
+    </div>
+        <div class="content">
+                <table>
+                    <tr>
+                <td>
+                                        <a href="Workflux/Builder/StateMachineBuilder.html" target="main"><abbr title="Workflux\Builder\StateMachineBuilder">Workflux\Builder\StateMachineBuilder</abbr></a>
+                                    </td>
+                <td>
+                    The StateMachineBuilder provides a fluent api for defining state machines.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <em>                    <a href="Workflux/Builder/StateMachineBuilderInterface.html" target="main"><abbr title="Workflux\Builder\StateMachineBuilderInterface">Workflux\Builder\StateMachineBuilderInterface</abbr></a>
+                    </em>                </td>
+                <td>
+                    StateMachineBuilderInterface implementations are supposed to provide convenience for building state machines.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                        <a href="Workflux/Builder/StatesVerification.html" target="main"><abbr title="Workflux\Builder\StatesVerification">Workflux\Builder\StatesVerification</abbr></a>
+                                    </td>
+                <td>
+                    The StatesVerification is responsable for verifying the states configuration of a state machine setup.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                        <a href="Workflux/Builder/TransitionsVerification.html" target="main"><abbr title="Workflux\Builder\TransitionsVerification">Workflux\Builder\TransitionsVerification</abbr></a>
+                                    </td>
+                <td>
+                    The TransitionsVerification is responsable for making sure that a given transition configuration is valid.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <em>                    <a href="Workflux/Builder/VerificationInterface.html" target="main"><abbr title="Workflux\Builder\VerificationInterface">Workflux\Builder\VerificationInterface</abbr></a>
+                    </em>                </td>
+                <td>
+                    VerificationInterface implementations are supposed to execute a specific verfication strategy in the context of assuring state machine validity.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                        <a href="Workflux/Builder/XmlStateMachineBuilder.html" target="main"><abbr title="Workflux\Builder\XmlStateMachineBuilder">Workflux\Builder\XmlStateMachineBuilder</abbr></a>
+                                    </td>
+                <td>
+                    The XmlStateMachineBuilder can build/load a state_machine from a given xml file, containing valid state machine declarations.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                        <a href="Workflux/Error/Error.html" target="main"><abbr title="Workflux\Error\Error">Workflux\Error\Error</abbr></a>
+                                    </td>
+                <td>
+                    Base class that all workflux errors/exceptions should extend.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                        <a href="Workflux/Error/VerificationError.html" target="main"><abbr title="Workflux\Error\VerificationError">Workflux\Error\VerificationError</abbr></a>
+                                    </td>
+                <td>
+                    Represents an error in the context of verifying an expectation.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                        <a href="Workflux/ExecutionContext.html" target="main"><abbr title="Workflux\ExecutionContext">Workflux\ExecutionContext</abbr></a>
+                                    </td>
+                <td>
+                    Standard implementation of the ExecutionContextInterface.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <em>                    <a href="Workflux/ExecutionContextInterface.html" target="main"><abbr title="Workflux\ExecutionContextInterface">Workflux\ExecutionContextInterface</abbr></a>
+                    </em>                </td>
+                <td>
+                    ExecutionContextInterface reflects the current state of execution of a subject inside a state machine.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                        <a href="Workflux/Guard/CallbackGuard.html" target="main"><abbr title="Workflux\Guard\CallbackGuard">Workflux\Guard\CallbackGuard</abbr></a>
+                                    </td>
+                <td>
+                    The CallbackGuard employs it's verification strategy by simply delegating the verification to a given callback.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                        <a href="Workflux/Guard/ConfigurableGuard.html" target="main"><abbr title="Workflux\Guard\ConfigurableGuard">Workflux\Guard\ConfigurableGuard</abbr></a>
+                                    </td>
+                <td>
+                    The ConfigurableGuard is a base class that allows you to implement configurable GuardInterface implementations.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                        <a href="Workflux/Guard/ExpressionGuard.html" target="main"><abbr title="Workflux\Guard\ExpressionGuard">Workflux\Guard\ExpressionGuard</abbr></a>
+                                    </td>
+                <td>
+                    The ExpressionGuard employs it's verfification based on the evaluation of a given (symfony) expression.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <em>                    <a href="Workflux/Guard/GuardInterface.html" target="main"><abbr title="Workflux\Guard\GuardInterface">Workflux\Guard\GuardInterface</abbr></a>
+                    </em>                </td>
+                <td>
+                    GuardInterface implementations are supposed to check, if a given subject is acceptable in the context of transitioning from one state to another.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                        <a href="Workflux/Guard/VariableGuard.html" target="main"><abbr title="Workflux\Guard\VariableGuard">Workflux\Guard\VariableGuard</abbr></a>
+                                    </td>
+                <td>
+                    The VariableGuard employs it's verfification based on the evaluation of a given (symfony) expression.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <em>                    <a href="Workflux/Parser/ParserInterface.html" target="main"><abbr title="Workflux\Parser\ParserInterface">Workflux\Parser\ParserInterface</abbr></a>
+                    </em>                </td>
+                <td>
+                    ParserInterface implementations are supposed to parse specific payload and turn it into a common array structure, that is expected by the StateMachineBuilderInterface.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                        <a href="Workflux/Parser/Xml/AbstractXmlParser.html" target="main"><abbr title="Workflux\Parser\Xml\AbstractXmlParser">Workflux\Parser\Xml\AbstractXmlParser</abbr></a>
+                                    </td>
+                <td>
+                    The AbstsractXmlParser serves as base class for xml parsers.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                        <a href="Workflux/Parser/Xml/OptionsXpathParser.html" target="main"><abbr title="Workflux\Parser\Xml\OptionsXpathParser">Workflux\Parser\Xml\OptionsXpathParser</abbr></a>
+                                    </td>
+                <td>
+                    The OptionsXpathParser can parse 'options' that are defined below a given context node.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                        <a href="Workflux/Parser/Xml/StateMachineDefinitionParser.html" target="main"><abbr title="Workflux\Parser\Xml\StateMachineDefinitionParser">Workflux\Parser\Xml\StateMachineDefinitionParser</abbr></a>
+                                    </td>
+                <td>
+                    The StateMachineDefinitionParser can parse xml state machine definitions and provides an array, that is structured the way the StateMachineBuilder expects.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                        <a href="Workflux/Parser/Xml/Xpath.html" target="main"><abbr title="Workflux\Parser\Xml\Xpath">Workflux\Parser\Xml\Xpath</abbr></a>
+                                    </td>
+                <td>
+                    The Xpath class is a conveniece wrapper around DOMXpath and simple adds a namespace prefix to queries.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                        <a href="Workflux/Renderer/AbstractRenderer.html" target="main"><abbr title="Workflux\Renderer\AbstractRenderer">Workflux\Renderer\AbstractRenderer</abbr></a>
+                                    </td>
+                <td>
+                    The AbstractRenderer is a base class, that allows you to implement configurable GraphRendererInterface implementations.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                        <a href="Workflux/Renderer/DotGraphRenderer.html" target="main"><abbr title="Workflux\Renderer\DotGraphRenderer">Workflux\Renderer\DotGraphRenderer</abbr></a>
+                                    </td>
+                <td>
+                    The DotGraphRenderer can render state machines as dot-graphs.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <em>                    <a href="Workflux/Renderer/GraphRendererInterface.html" target="main"><abbr title="Workflux\Renderer\GraphRendererInterface">Workflux\Renderer\GraphRendererInterface</abbr></a>
+                    </em>                </td>
+                <td>
+                    GraphRendererInterface implementations are expected to render StateMachineInterface instances into any kind of specific output format, like for example xml, yaml or dot.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                        <a href="Workflux/StateMachine/EventEmittingStateMachine.html" target="main"><abbr title="Workflux\StateMachine\EventEmittingStateMachine">Workflux\StateMachine\EventEmittingStateMachine</abbr></a>
+                                    </td>
+                <td>
+                    Adds events to the default StateMachine implementation.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                        <a href="Workflux/StateMachine/StateMachine.html" target="main"><abbr title="Workflux\StateMachine\StateMachine">Workflux\StateMachine\StateMachine</abbr></a>
+                                    </td>
+                <td>
+                    General default implementation of the StateMachineInterface.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <em>                    <a href="Workflux/StateMachine/StateMachineInterface.html" target="main"><abbr title="Workflux\StateMachine\StateMachineInterface">Workflux\StateMachine\StateMachineInterface</abbr></a>
+                    </em>                </td>
+                <td>
+                    StateMachineInterface implementations are expected to act as event triggered finite state machines.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                        <a href="Workflux/State/State.html" target="main"><abbr title="Workflux\State\State">Workflux\State\State</abbr></a>
+                                    </td>
+                <td>
+                    The State class is a standard implementation of the StateInterface.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <em>                    <a href="Workflux/State/StateInterface.html" target="main"><abbr title="Workflux\State\StateInterface">Workflux\State\StateInterface</abbr></a>
+                    </em>                </td>
+                <td>
+                    StateInterface implementations are expected to act as a nodes that are part of a state graph.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                        <a href="Workflux/State/VariableState.html" target="main"><abbr title="Workflux\State\VariableState">Workflux\State\VariableState</abbr></a>
+                                    </td>
+                <td>
+                    The VariableState class set and removes variables when it transition callbacks (onEntry, onExit) are invoked.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <em>                    <a href="Workflux/StatefulSubjectInterface.html" target="main"><abbr title="Workflux\StatefulSubjectInterface">Workflux\StatefulSubjectInterface</abbr></a>
+                    </em>                </td>
+                <td>
+                    StatefulSubjectInterface provides the main contract between any external objects and the workflux statemachine.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                        <a href="Workflux/Transition/Transition.html" target="main"><abbr title="Workflux\Transition\Transition">Workflux\Transition\Transition</abbr></a>
+                                    </td>
+                <td>
+                    Standard implementation of the TransitionInterface.
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <em>                    <a href="Workflux/Transition/TransitionInterface.html" target="main"><abbr title="Workflux\Transition\TransitionInterface">Workflux\Transition\TransitionInterface</abbr></a>
+                    </em>                </td>
+                <td>
+                    TransitionInterface implementations model the connections between states.
+                </td>
+            </tr>
+            </table>
+        </div>
+            <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/" target="_top">Sami, the API Documentation Generator</a>.
+    </div>
+    </body>
+</html>
